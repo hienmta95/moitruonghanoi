@@ -17,7 +17,7 @@
     <article>
         <h1 class="hidden">The Leading Plastic Bags Manufacturer and Wholesale Supplier</h1>
         <h2 class="hidden">Moi truong Ha Noi is the Best Solution to Shine Up Your Business</h2>
-        <section class="intro bg-fix wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1s">
+        <section class="intro bg-fix wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="0.1s">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 ">
@@ -40,7 +40,7 @@
         </section>
 
         <div class="clearfix"></div>
-        <section class="bg-white border-none prod-home wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
+        <section class="bg-white border-none prod-home wow fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s">
             <div class="container">
                 <div class="row">
                     <h2 class="title-home title-fix">
@@ -72,16 +72,16 @@
 
         <div class="clearfix"></div>
 
-        <section class="bg-gray support wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" style="padding-bottom: 90px;">
+        <section class="bg-gray support wow fadeInUp" data-wow-duration="0.1s" data-wow-delay="0.1s" style="padding-bottom: 90px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title-home title-fix-2 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                        <h2 class="title-home title-fix-2 wow fadeInLeft" data-wow-duration="0.1s" data-wow-delay="0.1s">
                             <a href="{{ route('homepage') }}">Tin Tức</a>&nbsp;
                         </h2>
                         <div class="slider-new owl-carousel owl-theme tintuc-home">
                             @foreach($tintuc as $item)
-                                <div class="item wow zoomInRight" data-wow-duration="1s" data-wow-delay="1.5s">
+                                <div class="item wow zoomInRight" data-wow-duration="0.1s" data-wow-delay="0.1s">
                                     <div class="item">
                                         <div class="box_news">
                                             <a href="/" class="img_news h_63" title="{{ $item['title'] }}">
@@ -110,34 +110,34 @@
 
         <div class="clearfix"></div>
 
-        <section class="partner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-home title-fix-2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
-                            Đối tác khách hàng                </h2>
-                        <div class="slider-dt owl-carousel owl-theme">
-                            <div class="item wow zoomIn"  data-wow-delay=".5s" data-wow-duration="1s" >
-                                <a href="http://www.anphatplastic.com/" title="Sabic"><img c src="http://www.anphatplastic.com/upload/img/banner/sabic-anphat-plastic-logo.png" alt="Sabic"/></a>
-                            </div>
-                            <div class="item wow zoomIn"  data-wow-delay=".5s" data-wow-duration="1s" >
-                                <a href="http://www.anphatplastic.com/" title="đối tác 3"><img c src="http://www.anphatplastic.com/upload/img/banner/misubishi-anphat-plastic-logo.png" alt="đối tác 3"/></a>
-                            </div>
-                            <div class="item wow zoomIn"  data-wow-delay=".5s" data-wow-duration="1s" >
-                                <a href="http://www.anphatplastic.com/" title="Chevron Philips"><img c src="http://www.anphatplastic.com/upload/img/banner/chevron-phillips-anphat-plastic-logo.png" alt="Chevron Philips"/></a>
-                            </div>
-                            <div class="item wow zoomIn"  data-wow-delay=".5s" data-wow-duration="1s" >
-                                <a href="http://www.anphatplastic.com/" title="BASF"><img c src="http://www.anphatplastic.com/upload/img/banner/basf-anphat-plastic-logo.png" alt="BASF"/></a>
-                            </div>
-                            <div class="item wow zoomIn"  data-wow-delay=".5s" data-wow-duration="1s" >
-                                <a href="http://www.anphatplastic.com/" title="Sasol"><img c src="http://www.anphatplastic.com/upload/img/banner/sasol-anphat-plastic-logo.png" alt="Sasol"/></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="clearfix"></div>
+        {{--<section class="partner">--}}
+            {{--<div class="container">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-12">--}}
+                        {{--<h2 class="title-home title-fix-2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">--}}
+                            {{--Đối tác khách hàng                </h2>--}}
+                        {{--<div class="slider-dt owl-carousel owl-theme">--}}
+                            {{--<div class="item wow zoomIn"  data-wow-delay=".2s" data-wow-duration="1s" >--}}
+                                {{--<a href="http://www.anphatplastic.com/" title="Sabic"><img c src="http://www.anphatplastic.com/upload/img/banner/sabic-anphat-plastic-logo.png" alt="Sabic"/></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="item wow zoomIn"  data-wow-delay=".2s" data-wow-duration="1s" >--}}
+                                {{--<a href="http://www.anphatplastic.com/" title="đối tác 3"><img c src="http://www.anphatplastic.com/upload/img/banner/misubishi-anphat-plastic-logo.png" alt="đối tác 3"/></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="item wow zoomIn"  data-wow-delay=".2s" data-wow-duration="1s" >--}}
+                                {{--<a href="http://www.anphatplastic.com/" title="Chevron Philips"><img c src="http://www.anphatplastic.com/upload/img/banner/chevron-phillips-anphat-plastic-logo.png" alt="Chevron Philips"/></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="item wow zoomIn"  data-wow-delay=".2s" data-wow-duration="1s" >--}}
+                                {{--<a href="http://www.anphatplastic.com/" title="BASF"><img c src="http://www.anphatplastic.com/upload/img/banner/basf-anphat-plastic-logo.png" alt="BASF"/></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="item wow zoomIn"  data-wow-delay=".2s" data-wow-duration="1s" >--}}
+                                {{--<a href="http://www.anphatplastic.com/" title="Sasol"><img c src="http://www.anphatplastic.com/upload/img/banner/sasol-anphat-plastic-logo.png" alt="Sasol"/></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</section>--}}
+        {{--<div class="clearfix"></div>--}}
     </article>
 
 @endsection
