@@ -1,0 +1,14 @@
+{
+    "name": "Ngocdiep",
+    "alias": "ngocdiep",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Ngocdiep\\Providers\\NgocdiepServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

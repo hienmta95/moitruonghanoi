@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => ['web'], 'prefix' => ''], function()
+Route::group(['middleware' => ['web'], 'prefix' => 'anphat'], function()
 {
 
     Route::get('', 'FrontendController@homepage')->name('homepage');

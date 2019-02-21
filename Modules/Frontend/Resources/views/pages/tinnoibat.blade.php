@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-3 col-xs-4">
                         <div class="img-news-left">
-                            <a href="/" title="{{ $item['title'] }}" class="h_727"><img class="w_100" src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item['title'] }}"/></a>
+                            <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}" class="h_727"><img class="w_100" src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item['title'] }}"/></a>
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-9 col-xs-8">

@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/ngocdiep",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Ngocdiep\\Providers\\NgocdiepServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Ngocdiep\\": ""
+        }
+    }
+}
