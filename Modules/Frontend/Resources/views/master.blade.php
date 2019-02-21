@@ -179,7 +179,7 @@
                                                         </ul>
                                                     </li>
                                                     <li class="menu-item  has-dropdown">
-                                                        <a href="{{ route('frontend.tintuc') }}" class="menu-link ">Tin tức</a>
+                                                        <a href="{{ route('frontend.tintuc.list') }}" class="menu-link ">Tin tức</a>
                                                     </li>
                                                     <li class="menu-item ">
                                                         <a href="{{ route('frontend.lienhe') }}" class="menu-link ">Liên hệ </a>
@@ -266,7 +266,7 @@
                                         <a href="/"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>Dự án đã thực hiện</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="{{ route('frontend.tintuc') }}"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>Tin tức</a>
+                                        <a href="{{ route('frontend.tintuc.list') }}"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>Tin tức</a>
                                     </li>
 
                                 </ul>
