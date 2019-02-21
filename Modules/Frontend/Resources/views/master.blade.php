@@ -78,11 +78,11 @@
                                                 &nbsp;</span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="/"><img src="{{ asset('/assets/img/vi.jpg') }}" alt=""></a></li>
-                                            <li><a href="/"><img src="{{ asset('/assets/img/en.jpg') }}" alt=""></a></li>
+                                            <li><a href="{{ route('homepage') }}"><img src="{{ asset('/assets/img/vi.jpg') }}" alt=""></a></li>
+                                            <li><a href="{{ route('homepage') }}"><img src="{{ asset('/assets/img/en.jpg') }}" alt=""></a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="https://twitter.com/An_Phat_Plastic" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://twitter.com/" title=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                     <li><a href="https://www.facebook.com/" title=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                     <li><a href="https://www.youtube.com/" title=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                                     <li><a href="https://www.linkedin.com/" title=""><i class="fa fa-linkedin" aria-hidden="true" style=" margin-top: 0px;
@@ -107,7 +107,7 @@
                                 <span class="line line-3"></span>
                             </div>
                         </button>
-                        <a href="/"><img class="" src="{{ asset('/images/entech.png') }}" alt="Logo"></a>
+                        <a href="{{ route('homepage') }}"><img class="" src="{{ asset('/images/entech.png') }}" alt="Logo"></a>
                         <ul class="hidden-xs social-top pull-right ngonngu">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -130,7 +130,7 @@
                         <div class="row">
                             <div class=" col-lg-2 col-md-3 hidden-sm hidden-xs">
                                 <div class="logo-pc">
-                                    <a href="/"><img class="img-responsive" src="{{ asset('/images/entech.png') }}" alt="Logo"></a>
+                                    <a href="{{ route('homepage') }}"><img class="img-responsive" src="{{ asset('/images/entech.png') }}" alt="Logo"></a>
                                 </div>
                             </div>
                             <div class="col-lg-10 col-md-9 col-sm-12">
@@ -143,11 +143,11 @@
                                                         <a href="{{ route('homepage') }}" class="menu-link"><i class="fa fa-home"></i> Trang chủ</a>
                                                     </li>
                                                     <li class="menu-item has-dropdown">
-                                                        <a href="" class="menu-link ">Công nghệ</a>
+                                                        <a href="#" class="menu-link ">Công nghệ</a>
                                                         <ul class="nav-dropdown menu clearfix">
                                                             @foreach($loaicongnghe as $item)
                                                                 <li class="menu-item">
-                                                                    <a href="{{ route('homepage') }}" class="menu-link"><i
+                                                                    <a href="{{ route('frontend.loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" class="menu-link"><i
                                                                             class="fa fa-angle-double-right"
                                                                             aria-hidden="true"></i> {{ $item['title'] }}</a>
                                                                 </li>
@@ -159,7 +159,7 @@
                                                         <ul class="nav-dropdown menu clearfix">
                                                             @foreach($loaiduan as $item)
                                                                 <li class="menu-item">
-                                                                    <a href="{{ route('homepage') }}" class="menu-link"><i
+                                                                    <a href="{{ route('frontend.loaiduan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" class="menu-link"><i
                                                                             class="fa fa-angle-double-right"
                                                                             aria-hidden="true"></i> {{ $item['title'] }}</a>
                                                                 </li>
@@ -171,7 +171,7 @@
                                                         <ul class="nav-dropdown menu clearfix">
                                                             @foreach($loaisanpham as $item)
                                                                 <li class="menu-item">
-                                                                    <a href="{{ route('homepage') }}" class="menu-link"><i
+                                                                    <a href="{{ route('frontend.loaisanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" class="menu-link"><i
                                                                             class="fa fa-angle-double-right"
                                                                             aria-hidden="true"></i> {{ $item['title'] }}</a>
                                                                 </li>
@@ -179,10 +179,10 @@
                                                         </ul>
                                                     </li>
                                                     <li class="menu-item  has-dropdown">
-                                                        <a href="" class="menu-link ">Tin tức</a>
+                                                        <a href="{{ route('frontend.tintuc') }}" class="menu-link ">Tin tức</a>
                                                     </li>
                                                     <li class="menu-item ">
-                                                        <a href="" class="menu-link ">Liên hệ </a>
+                                                        <a href="{{ route('frontend.lienhe') }}" class="menu-link ">Liên hệ </a>
                                                     </li>
 
                                                     <li class="menu-item"><a href="#"
@@ -236,13 +236,13 @@
                     <div class="box-footer wow zoomInLeft" data-wow-duration="0.5s" data-wow-delay="0.5s">
                         <div class="address-bottom">
                             <div class="logo-f">
-                                <a href="/"><img class="img-responsive" style="max-width: 100%;"  src="{{ asset('/images/entech.png') }}" alt="Logo"></a>
+                                <a href="{{ route('homepage') }}"><img class="img-responsive" style="max-width: 100%;"  src="{{ asset('/images/entech.png') }}" alt="Logo"></a>
                             </div>
                             <ul class="address-f">
                                 <li>  <i class="fa fa-map-marker" aria-hidden="true"></i>  <p>Số 14 - Đường A – Thành Trung – Trâu Qùy – Gia Lâm – Hà nội </p></li>
                                 <li><i class="fa fa-phone" aria-hidden="true"></i><p><a href="tel:+84-220-3.755.997  | +84-220-3.755.998" title="+84-220-3.755.997  | +84-220-3.755.998">04.62932798  | 38760436</a></p></li>
                                 <li><i class="fa fa-envelope" aria-hidden="true"></i><p>moitruonghanoi@gmail.com</p></li>
-                                <li><i class="fa fa-globe" aria-hidden="true"></i><p><a href="/" style="color: #7fc142">{{ route('homepage') }}</a></p></li>
+                                <li><i class="fa fa-globe" aria-hidden="true"></i><p><a href="{{ route('homepage') }}" style="color: #7fc142">{{ route('homepage') }}</a></p></li>
                             </ul>
 
                         </div>
@@ -251,7 +251,7 @@
                 <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                     <div class="box-footer">
                         <h3 class="title-bottom title-bottom-menu-1">
-                            <a href="/" >CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI</a>
+                            <a href="{{ route('homepage') }}" >CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI</a>
                         </h3>
                         <div class="row">
                             <div class="col-md-6">
@@ -266,7 +266,7 @@
                                         <a href="/"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>Dự án đã thực hiện</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="/"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>Tin tức</a>
+                                        <a href="{{ route('frontend.tintuc') }}"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>Tin tức</a>
                                     </li>
 
                                 </ul>
@@ -275,7 +275,7 @@
                                 <ul class="list-bottom">
                                     @foreach($loaicongnghe as $item)
                                         <li class="menu-item">
-                                            <a href="/"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>{{ $item['title'] }}</a>
+                                            <a href="{{ route('frontend.loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"><img src="{{ asset('/assets/img/icon_ul.png') }}" alt=""/>{{ $item['title'] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
