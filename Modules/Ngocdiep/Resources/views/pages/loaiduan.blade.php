@@ -87,6 +87,18 @@
                     </section>
 
                 </div>
+
+                <div class="uk-width-large-1-4 uk-visible-small">
+                    <aside class="aside">
+
+                        @include('ngocdiep::pages.danhmucduan')
+
+                        @include('ngocdiep::pages.danhmucmail')
+
+                        @include('ngocdiep::pages.tinnoibat')
+
+                    </aside><!-- .aside -->
+                </div><!-- .uk-width -->
             </div>
         </div>
     </div>

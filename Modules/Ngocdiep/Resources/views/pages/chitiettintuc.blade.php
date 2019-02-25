@@ -99,6 +99,17 @@
                         </section>
                     </section><!-- .article-related -->
                 </div>
+                <div class="uk-width-large-1-4 uk-visible-small">
+                    <aside class="aside">
+                        <aside class="aside">
+
+                            @include('ngocdiep::pages.danhmucsanpham')
+                            @include('ngocdiep::pages.danhmucmail')
+                            @include('ngocdiep::pages.tinnoibat')
+
+                        </aside><!-- .aside -->
+                    </aside><!-- .aside -->
+                </div>
             </div>
         </div>
     </div>

@@ -187,17 +187,29 @@
 
 <!-- MOBILE HEADER -->
 <header class="mobile-header uk-hidden-large">
-    <div class="topbar">
-        {{ __('Tự hào là thương hiệu quốc gia') }}	</div>
+    {{--<div class="topbar">--}}
+        {{--{{ __('Tự hào là thương hiệu quốc gia') }}	--}}
+    {{--</div>--}}
     <section class="upper">
         <a class="moblie-menu-btn skin-1" href="#offcanvas" class="offcanvas" data-uk-offcanvas="{target:'#offcanvas'}">
             <span>Menu</span>
         </a>
         <div class="logo">
-            <a style="margin-left: 20px;" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
+            <a style="width: auto; display: inline-block;" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
                 <img style="width: 80px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
             </a>
+            <div class="logo-brand" style="display: inline-block;
+    max-width: 161px;
+    vertical-align: middle;
+    margin-left: 5px;
+    min-width: 161px;">
+                <h4 style="font-size: 10px;
+    line-height: 16px;
+    color: #56884c;
+    font-weight: 700;">{{ $info['tencongty'] }}</h4>
+            </div>
         </div>
+
         <div class="uk-clearfix mobile-language lang-change">
             <a class="btn en" href="#" title="en">English</a>
             <a class="btn vi" href="#" title="vi">Vietnamese</a>

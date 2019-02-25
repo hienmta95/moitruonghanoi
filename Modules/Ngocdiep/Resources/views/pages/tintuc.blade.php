@@ -82,6 +82,18 @@
                         {{--<div class="pagination mb30"><ul class="uk-pagination uk-pagination-right"><li class="uk-active"><a>1</a></li><li><a href="http://ngocdiep.vn/tin-tuc/trang-2.html" data-ci-pagination-page="2" rel="start">2</a></li><li><a href="http://ngocdiep.vn/tin-tuc/trang-3.html" data-ci-pagination-page="3">3</a></li><li><a href="http://ngocdiep.vn/tin-tuc/trang-2.html" data-ci-pagination-page="2" rel="next"><i class="fa fa-angle-double-right"></i></a></li><li><a href="http://ngocdiep.vn/tin-tuc/trang-20.html" data-ci-pagination-page="20">Trang Cuối ›</a></li></ul></div>									--}}
                     </section><!-- .article-catalogue -->
                 </div>
+
+                <div class="uk-width-large-1-4 uk-visible-small">
+                    <aside class="aside">
+
+                        @include('ngocdiep::pages.danhmucsanpham')
+
+                        @include('ngocdiep::pages.danhmucmail')
+
+                        @include('ngocdiep::pages.tinnoibat')
+
+                    </aside><!-- .aside -->
+                </div>
             </div>
         </div>
     </div>
