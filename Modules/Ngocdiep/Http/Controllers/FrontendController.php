@@ -206,8 +206,9 @@ class FrontendController extends Controller
         $request->flashOnly(['keyword']);
         $key = preg_replace("/[^a-zA-Z0-9]+/", "", $keyword);
 
-        $data = Product::with(['images'])
+        $data = Congnghe::with(['image'])
             ->where('title', 'like', '%'.$key.'%')
+            ->orWhere('description', 'like', '%'.$key.'%')
             ->orderBy('id', 'desc')
             ->paginate(12);
 
