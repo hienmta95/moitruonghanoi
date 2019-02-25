@@ -70,8 +70,10 @@ class SanphamController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
             'loaisanpham_id' => 'required',
         ]);
 
@@ -125,8 +127,10 @@ class SanphamController extends Controller
         $id = $request->id;
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
         ]);
         $sanpham = Sanpham::find($id);
 
@@ -139,14 +143,17 @@ class SanphamController extends Controller
                 $image_id = $request->image_old;
             }
             $sanpham->title = $request->title;
+            $sanpham->title_en = $request->title_en;
             $sanpham->slug = $request->slug;
             $sanpham->loaisanpham_id = $request->loaisanpham_id;
             $sanpham->noidung = $request->noidung;
+            $sanpham->noidung_en = $request->noidung_en;
             $sanpham->image_id = $image_id;
             $sanpham->description = $request->description;
+            $sanpham->description_en = $request->description_en;
             $sanpham->save();
 
-            return view('backend::sanpham.show', compact(['sanpham']));
+            return redirect()->route('backend.sanpham.show', $sanpham->id);
         }
         return redirect()->route('backend.sanpham.index');
     }

@@ -23,6 +23,7 @@ Quản lý dự án
                         <th class="orderable-col">ID</th>
                         <th class="un-orderable-col">Tên dự án</th>
                         <th class="un-orderable-col">Tên trên link</th>
+                        <th class="un-orderable-col">Hình ảnh</th>
                         <th class="un-orderable-col">Loại dự án</th>
                         <th class="orderable-col">Ngày lập</th>
                         <th class="un-orderable-col">Hành động</th>
@@ -30,6 +31,7 @@ Quản lý dự án
                 </thead>
                 <tfoot>
                     <tr>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -69,6 +71,7 @@ Quản lý dự án
             {data: 'id', name: 'id'},
             {data: 'title', name: 'title', orderable: false},
             {data: 'slug', name: 'slug', orderable: false},
+            {data: 'image', name: 'image', orderable: false},
             {data: 'loaiduan.title', name: 'loaiduan', orderable: false},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
@@ -78,7 +81,7 @@ Quản lý dự án
             var r = $('#duan-table tfoot tr');
             $('#duan-table thead').append(r);
             this.api().columns().every(function (i) {
-                if (i != 0 && i != 8 && i != 6) {
+                if (i != 0 && i != 5 && i != 7) {
                     var column = this;
                     var table = $('#duan-table').DataTable();
                     var input = document.createElement("input");

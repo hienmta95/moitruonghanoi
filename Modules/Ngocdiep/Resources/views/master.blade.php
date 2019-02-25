@@ -69,11 +69,11 @@
             <div class="uk-flex uk-flex-middle uk-flex-right container">
                 <ul class="uk-list uk-clearfix site-link" style="margin: 0px">
                     <li>
-                        <a href="#" title="Sơ đồ trang">
+                        <a href="gioi-thieu" title="Về chúng tôi">
 									<span class="icon">
 										<img src="{{ asset('/ngocdiep/img/icon_1.png') }}" alt="icon-menu-top" />
 									</span>
-                            <span class="label" style="font-size: 100%;">Danh mục dự án</span>
+                            <span class="label" style="font-size: 100%;">{{ __('Về chúng tôi') }}</span>
                         </a>
                     </li>
                     <li>
@@ -81,14 +81,14 @@
 									<span class="icon">
 										<img src="{{ asset('/ngocdiep/img/icon_2.png') }}" alt="icon-menu-top" />
 									</span>
-                            <span class="label" style="font-size: 100%">Thông báo</span>
+                            <span class="label" style="font-size: 100%">{{ __('Thông báo') }}</span>
                         </a>
                     </li>
                 </ul>
-                {{--<div class="uk-clearfix pc-language">--}}
-                    {{--<a class="btn en" href="http://ngocdiep.vn/?lang=english" title="English">English</a>--}}
-                    {{--<a class="btn vi" href="http://ngocdiep.vn/?lang=vietnamese" title="Vietnamese">Vietnamese</a>--}}
-                {{--</div>--}}
+                <div class="uk-clearfix pc-language lang-change">
+                    <a class="btn en" href="#" title="en">English</a>
+                    <a class="btn vi" href="#" title="vi">Vietnamese</a>
+                </div>
             </div>
         </div>
     </section><!-- .topbar -->
@@ -98,50 +98,50 @@
             <div class="uk-flex uk-flex-middle uk-flex-space-between container">
                 <div class="logo">
                     <a href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
-                        <img src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
+                        <img style="max-width: 75px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
                     </a>
                 </div>
                 <nav class="main-navs">
                     <ul class="uk-navbar-nav main-menus">
                         <li>
                             <a href="{{ route('trangchu') }}" title="Trang chủ">
-                                Trang chủ</a>
+                                {{ __('Trang chủ') }}</a>
                         </li>
                         <li>
-                            <a href="/" title="Giới Thiệu">
-                                Giới Thiệu</a>
+                            <a href="{{ route('gioithieu') }}" title="Giới Thiệu">
+                                {{ __('Giới thiệu') }}</a>
                         </li>
                         <li>
-                            <a href="#" title="Công nghệ của chúng tôi">Công nghệ</a>
+                            <a href="#" title="Công nghệ của chúng tôi">{{ __('Công nghệ') }}</a>
                             <div class="dropdown-menu">
                                 <ul class="uk-list sub_menus">
                                     @foreach($loaicongnghe as $item)
                                         <li>
-                                            <a href="{{ route('loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                                            <a href="{{ route('loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <a href="#" title="Các sản phẩm">Sản phẩm</a>
+                            <a href="#" title="Các sản phẩm">{{ __('Sản phẩm') }}</a>
                             <div class="dropdown-menu">
                                 <ul class="uk-list sub_menus">
                                     @foreach($loaisanpham as $item)
                                         <li>
-                                            <a href="{{ route('loaisanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                                            <a href="{{ route('loaisanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <a href="#" title="Các dự án">Các dự án</a>
+                            <a href="#" title="Các dự án">{{ __('Các dự án') }}</a>
                             <div class="dropdown-menu">
                                 <ul class="uk-list sub_menus">
                                     @foreach($loaiduan as $item)
                                         <li>
-                                            <a href="{{ route('loaiduan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                                            <a href="{{ route('loaiduan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -149,7 +149,7 @@
                         </li>
                         <li>
                             <a href="{{ route('tintuc.list') }}" title="Tin tức">
-                                Tin tức</a>
+                                {{ __('Tin tức') }}</a>
                         </li>
                         {{--<li>--}}
                             {{--<a href="tuyen-dung" title="Tuyển dụng">--}}
@@ -161,11 +161,11 @@
                         {{--</li>--}}
                         <li>
                             <a href="{{ route('lienhe') }}" title="Liên hệ">
-                                Liên hệ</a>
+                                {{ __('Liên hệ') }}</a>
                         </li>
                     </ul>
                 </nav>
-                <a class="btn-opensearch" href="#search-modal" title="Tìm kiếm" data-uk-modal="{target:'#search-modal'}">Tìm kiếm</a>
+                <a class="btn-opensearch" href="#search-modal" title="Tìm kiếm" data-uk-modal="{target:'#search-modal'}">{{ __('Tìm kiếm') }}</a>
             </div>
         </div>
     </section><!-- .upper -->
@@ -177,8 +177,8 @@
         <a class="uk-modal-close uk-close"></a>
         <div class="pc-search">
             <form action="/" method="get" class="uk-form form">
-                <input type="text" name="key" class="uk-width-1-1 input-text" placeholder="Nhập từ khóa tìm kiếm" />
-                <button type="submit" class="btn-submit">Tìm kiếm</button>
+                <input type="text" name="key" class="uk-width-1-1 input-text" placeholder="{{ __('Nhập từ khóa tìm kiếm') }}" />
+                <button type="submit" class="btn-submit">{{ __('Tìm kiếm') }}</button>
             </form>
         </div>
     </div>
@@ -188,27 +188,27 @@
 <!-- MOBILE HEADER -->
 <header class="mobile-header uk-hidden-large">
     <div class="topbar">
-        Tự hào là thương hiệu quốc gia	</div>
+        {{ __('Tự hào là thương hiệu quốc gia') }}	</div>
     <section class="upper">
         <a class="moblie-menu-btn skin-1" href="#offcanvas" class="offcanvas" data-uk-offcanvas="{target:'#offcanvas'}">
             <span>Menu</span>
         </a>
-        <div class="logo" style="width: 100%;">
-            <a style="width: 100%; text-align: right; padding-right: 20px;" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
+        <div class="logo">
+            <a style="margin-left: 20px;" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
                 <img style="width: 80px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
             </a>
         </div>
-        {{--<div class="uk-clearfix mobile-language">--}}
-            {{--<a class="btn en" href="http://ngocdiep.vn/?lang=english" title="English">English</a>--}}
-            {{--<a class="btn vi" href="http://ngocdiep.vn/?lang=vietnamese" title="Vietnamese">Vietnamese</a>--}}
-        {{--</div>--}}
+        <div class="uk-clearfix mobile-language lang-change">
+            <a class="btn en" href="#" title="en">English</a>
+            <a class="btn vi" href="#" title="vi">Vietnamese</a>
+        </div>
     </section>
 
     <section class="lower">
         <div class="mobile-search">
             <form action="/" method="get" class="uk-form form">
-                <input type="text" name="key" class="uk-width-1-1 input-text" placeholder="Nhập từ khóa tìm kiếm" />
-                <button type="submit" class="btn-submit">Tìm kiếm</button>
+                <input type="text" name="key" class="uk-width-1-1 input-text" placeholder="{{ __('Nhập từ khóa tìm kiếm') }}" />
+                <button type="submit" class="btn-submit">{{ __('Tìm kiếm') }}</button>
             </form>
         </div>
     </section><!-- .lower -->
@@ -218,8 +218,7 @@
 
 @yield('content')
 
-<!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" style="color: #fff">
     <section class="upper">
         <div class="uk-container uk-container-center">
             <div class="uk-grid uk-grid-medium">
@@ -227,30 +226,30 @@
                     <div class="footer-company">
                         <div class="main-title">
                             <a href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
-                                CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI                            </a>
+                                {{ $info['tencongty'] }}                           </a>
                         </div>
-                        <p><strong>Trụ sở chính:</strong><br />
-                            Số 14 - Đường A – Thành Trung – Trâu Qùy – Gia Lâm – Hà nội<br />
+                        <p><strong>Address:</strong><br />
+                            {{ $info['truso'] }}<br />
                         </p>
 
                         <p><strong>Emai:</strong><br />
-                            moitruonghanoi@gmail.com</p>
+                            {{ $info['emailcongty'] }}</p>
 
                         <p><strong>Tel:</strong><br />
-                            04.62932798 | 38760436</p>
+                            {{ $info['tel1'] }} | {{ $info['tel2'] }}</p>
 
                         <p><strong>Link:</strong><br />
-                            <a style="color: #c0efc2" href="{{ route('trangchu') }}">{{ route('trangchu') }}</a>
+                            <a style="color: #fff" href="{{ route('trangchu') }}">{{ route('trangchu') }}</a>
                         </p>
 
                     </div>
                 </div>
                 <div class="uk-width-large-1-2">
                     <div class="footer-social">
-                        <div class="main-title"><span>Liên kết mạng xã hội</span></div>
+                        <div class="main-title"><span>{{ __('Liên kết mạng xã hội') }}</span></div>
                         <ul class="uk-list uk-clearfix list">
                             <li>
-                                <a href="https://www.facebook.com/" title="Facebook" target="_blank">
+                                <a href="{{ $info['facebook'] }}" title="Facebook" target="_blank">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
@@ -265,7 +264,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/channel/UCQroqswHg-V0RgsBQQgVC3w?disable_polymer=true" title="Youtube" target="_blank">
+                                <a href="{{ $info['youtube'] }}" title="Youtube" target="_blank">
                                     <i class="fa fa-youtube"></i>
                                 </a>
                             </li>
@@ -277,66 +276,64 @@
                         </ul>
                     </div>
 
-                    {{--<div class="footer-statistical">--}}
-                        {{--<div class="main-title"><span>Thống kê truy cập</span></div>--}}
-                        {{--<div class="value">Đang online: 4 - Tổng truy cập. 4.899.813</div>--}}
-                    {{--</div>--}}
+                    <div class="footer-statistical">
+                        <div class="main-title"><span>{{ __('Thống kê truy cập') }}</span></div>
+                        <div class="value">{{ __('Tổng truy cập') }}: {{ $info['count'] }} {{ __('lượt') }}</div>
+                    </div>
                 </div>
             </div><!-- .uk-grid -->
         </div>
     </section><!-- .upper -->
-</footer><!--.footer -->
+</footer>
 ﻿
-<div id="fb-root"></div>
-
 <div id="offcanvas" class="uk-offcanvas offcanvas">
     <div class="uk-offcanvas-bar">
         <form class="uk-search" action="/" data-uk-search="{}">
-            <input class="uk-search-field" type="search" name="key" placeholder="Nhập từ khóa tìm kiếm">
+            <input class="uk-search-field" type="search" name="key" placeholder="{{ __('Nhập từ khóa tìm kiếm') }}">
         </form>
 
         <ul class="l1 uk-nav uk-nav-offcanvas uk-nav uk-nav-parent-icon" data-uk-nav>
             <li class="l1 ">
-                <a href="{{ route('trangchu') }}" title="Trang chủ" class="l1">Trang chủ</a>
+                <a href="{{ route('trangchu') }}" title="Trang chủ" class="l1">{{ __('Trang chủ') }}</a>
             </li>
             <li class="l1 ">
-                <a href="/" title="Giới Thiệu" class="l1">Giới Thiệu</a>
+                <a href="{{ route('gioithieu') }}" title="Giới Thiệu" class="l1">{{ __('Giới thiệu') }}</a>
             </li>
             <li class="l1 uk-parent uk-position-relative">
                 <a href="#" title="" class="dropicon"></a>
-                <a href="#" title="Công nghệ của chúng tôi" class="l1">Công nghệ</a>
+                <a href="#" title="Công nghệ của chúng tôi" class="l1">{{ __('Công nghệ') }}</a>
                 <ul class="l2 uk-nav-sub">
                     @foreach($loaicongnghe as $item)
                         <li class="l2">
-                            <a href="{{ route('loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                            <a href="{{ route('loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                         </li>
                     @endforeach
                 </ul>
             </li>
             <li class="l1 uk-parent uk-position-relative">
                 <a href="#" title="" class="dropicon"></a>
-                <a href="#" title="Các sản phẩm" class="l1">Sản phẩm</a>
+                <a href="#" title="Các sản phẩm" class="l1">{{ __('Sản phẩm') }}</a>
                 <ul class="l2 uk-nav-sub">
                     @foreach($loaisanpham as $item)
                         <li class="l2">
-                            <a href="{{ route('loaisanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                            <a href="{{ route('loaisanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                         </li>
                     @endforeach
                 </ul>
             </li>
             <li class="l1 uk-parent uk-position-relative">
                 <a href="#" title="" class="dropicon"></a>
-                <a href="#" title="Các dự án" class="l1">Các dự án</a>
+                <a href="#" title="Các dự án" class="l1">{{ __('Các dự án') }}</a>
                 <ul class="l2 uk-nav-sub">
                     @foreach($loaiduan as $item)
                         <li class="l2">
-                            <a href="{{ route('loaiduan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                            <a href="{{ route('loaiduan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                         </li>
                     @endforeach
                 </ul>
             </li>
             <li class="l1 ">
-                <a href="{{ route('tintuc.list') }}" title="Tin tức" class="l1">Tin tức</a>
+                <a href="{{ route('tintuc.list') }}" title="Tin tức" class="l1">{{ __('Tin tức') }}</a>
             </li>
             {{--<li class="l1 ">--}}
                 {{--<a href="tuyen-dung" title="Tuyển dụng" class="l1">Tuyển dụng</a>--}}
@@ -345,7 +342,7 @@
                 {{--<a href="thu-vien-anh" title="Thư viện ảnh" class="l1">Thư viện ảnh</a>--}}
             {{--</li>--}}
             <li class="l1 ">
-                <a href="{{ route('lienhe') }}" title="Liên hệ" class="l1">Liên hệ</a>
+                <a href="{{ route('lienhe') }}" title="Liên hệ" class="l1">{{ __('Liên hệ') }}</a>
             </li>
         </ul>
     </div>
@@ -357,6 +354,8 @@
 <script src="{{ asset('ngocdiep/js/accordion.min.js') }}"></script>
 <script src="{{ asset('ngocdiep/js/function.js') }}"></script>
 <script src="{{ asset('ngocdiep/js/library1.js') }}"></script>
+<script src="{{ asset('backend/dist/js/js/jquery.cookie.js') }}"></script>
+
 <div id="modal-cart" class="uk-modal">
     <div class="uk-modal-dialog" style="width:768px;">
         <a class="uk-modal-close uk-close"></a>
@@ -378,5 +377,17 @@
 <div id="fb-root"></div>
 
 @stack('scripts')
+<script>
+    (function ( $ ) {
+
+        $('body').on('click', '.lang-change a.btn', function (e) {
+            e.preventDefault();
+            var langText = $(this).attr('title');
+            $.cookie("temp-lang", langText, { expires : 1, path:'/' });
+            location.reload();
+        });
+
+    })(jQuery);
+</script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 @extends('ngocdiep::master')
 
-@section('page_title', 'Tin tức')
+@section('page_title')
+    {{ __('Tin tức') }}
+@endsection
 
 @section('styles')
     <style>
@@ -21,10 +23,10 @@
                 <ul class="uk-breadcrumb">
                     <li>
                         <a href="{{ route('trangchu') }}" title="Trang chủ">
-                            <i class="fa fa-home"></i> Trang chủ</a>
+                            <i class="fa fa-home"></i> {{ __('Trang chủ') }}</a>
                     </li>
                     <li class="uk-active">
-                        <a href="{{ route('tintuc.list') }}" title="Tin tức">Tin tức</a>
+                        <a href="{{ route('tintuc.list') }}" title="Tin tức">{{ __('Tin tức') }}</a>
                     </li>
                 </ul>
             </div>
@@ -46,19 +48,19 @@
                     <section class="art-detail">
                         <section class="panel-body">
                             <article class="detail-content">
-                                <h1 class="main-title"><span>{{ $tintucDetail['title'] }}</span></h1>
+                                <h1 class="main-title"><span>{{ $tintucDetail[$title] }}</span></h1>
                                 <div class="description">
-                                    {!! $tintucDetail['description'] !!}
+                                    {!! $tintucDetail[$description] !!}
                                 </div>
                                 <div class="content">
-                                    {!! $tintucDetail['noidung'] !!}
+                                    {!! $tintucDetail[$noidung] !!}
                                 </div>
                             </article>
                         </section>
                     </section><!-- .article-detail -->
                     <section class="art-same">
                         <header class="panel-head">
-                            <h2 class="heading"><span>Tin liên quan</span></h2>
+                            <h2 class="heading"><span>{{ __('Tin liên quan') }}</span></h2>
                         </header>
                         <section class="panel-body">
                             <ul class="uk-grid lib-grid-15 uk-grid-width-1-2 uk-grid-width-medium-1-3 list-article" data-uk-grid-match="{target: '.article .title'}">
@@ -73,13 +75,13 @@
                                     <li>
                                         <article class="article">
                                             <div class="thumb">
-                                                <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}" class="image img-cover img-flash">
-                                                    <img src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item['title'] }}">
+                                                <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}" class="image img-cover img-flash">
+                                                    <img src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item[$title] }}">
                                                 </a>
                                             </div>
                                             <div class="infor">
                                                 <h4 class="title" style="min-height: 40px;">
-                                                    <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a>
+                                                    <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">{{ $item[$title] }}</a>
                                                 </h4>
                                             </div>
                                         </article><!-- .article-->

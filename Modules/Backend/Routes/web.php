@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/sanpham/indexData', 'SanphamController@indexData')->name('backend.sanpham.indexData');
     Route::get('/duan/indexData', 'DuanController@indexData')->name('backend.duan.indexData');
     Route::get('/tintuc/indexData', 'TintucController@indexData')->name('backend.tintuc.indexData');
+    Route::get('/section/{position}/indexData', 'SectionController@indexData')->name('backend.section.indexData');
 
 //    Route::post('/room/image/delete/{room_id}', 'RoomController@deleteImage')->name('backend.room.image.delete');
 //    Route::post('/product/image/delete/{product_id}', 'ProductController@deleteImage')->name('backend.product.image.delete');
@@ -117,6 +118,23 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/tintuc/update/{id}', 'TintucController@edit')->name('backend.tintuc.edit');
         Route::put('/tintuc/update/{id}', 'TintucController@update')->name('backend.tintuc.update');
         Route::delete('/tintuc/delete/{id}', 'TintucController@destroy')->name('backend.tintuc.destroy');
+
+        // Management
+        Route::get('/section/{position}', 'SectionController@index')->name('backend.section.index');
+        Route::get('/section/create/{position}', 'SectionController@create')->name('backend.section.create');
+        Route::post('/section/{position}', 'SectionController@store')->name('backend.section.store');
+        Route::get('/section/view/{position}/{id}', 'SectionController@show')->name('backend.section.show');
+        Route::get('/section/update/{position}/{id}', 'SectionController@edit')->name('backend.section.edit');
+        Route::put('/section/update/{position}/{id}', 'SectionController@update')->name('backend.section.update');
+        Route::delete('/section/delete/{id}', 'SectionController@destroy')->name('backend.section.destroy');
+
+        // Management
+        Route::get('/thongtin', 'UserController@getThongtin')->name('backend.thongtin.edit');
+        Route::post('/thongtin', 'UserController@postThongtin')->name('backend.thongtin.update');
+
+        // Management
+        Route::get('/gioithieu', 'UserController@getGioithieu')->name('backend.gioithieu.edit');
+        Route::post('/gioithieu', 'UserController@postGioithieu')->name('backend.gioithieu.update');
 
     });
 });

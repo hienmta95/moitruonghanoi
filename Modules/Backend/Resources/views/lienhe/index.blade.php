@@ -22,17 +22,15 @@ Quản lý liên hệ
                         <th class="un-orderable-col">#</th>
                         <th class="orderable-col">ID</th>
                         <th class="un-orderable-col">Họ tên</th>
-                        <th class="un-orderable-col">Di động</th>
+                        <th class="un-orderable-col">SDT</th>
                         <th class="un-orderable-col">Email</th>
                         <th class="un-orderable-col">Địa chỉ</th>
-                        <th class="un-orderable-col">Trạng thái</th>
                         <th class="orderable-col">Ngày lập</th>
                         <th class="un-orderable-col">Hành động</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -72,10 +70,9 @@ Quản lý liên hệ
             {data: 'DT_RowIndex', orderable: false, searchable: false},
             {data: 'id', name: 'id'},
             {data: 'hoten', name: 'hoten', orderable: false},
-            {data: 'didong', name: 'didong', orderable: false},
+            {data: 'sdt', name: 'sdt', orderable: false},
             {data: 'email', name: 'email', orderable: false},
             {data: 'diachi', name: 'diachi', orderable: false},
-            {data: 'trangthai', name: 'trangthai', orderable: false},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ],

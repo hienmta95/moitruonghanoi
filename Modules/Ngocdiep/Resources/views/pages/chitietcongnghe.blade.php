@@ -1,7 +1,7 @@
 @extends('ngocdiep::master')
 
 @section('page_title')
-    {{ $congnghe['title'] }}
+    {{ $congnghe[$title] }}
 @endsection
 
 @section('styles')
@@ -25,11 +25,11 @@
                 <ul class="uk-breadcrumb">
                     <li>
                         <a href="{{ route('trangchu') }}" title="Trang chủ">
-                            <i class="fa fa-home"></i> Trang chủ
+                            <i class="fa fa-home"></i> {{ __('Trang chủ') }}
                         </a>
                     </li>
-                    <li class="uk-active"><a href="{{ route('loaicongnghe', ['id'=>$congnghe['loaicongnghe']['id'], 'slug'=>$congnghe['loaicongnghe']['slug']]) }}" title="{{ $congnghe['loaicongnghe']['title'] }}">{{ $congnghe['loaicongnghe']['title'] }}</a></li>
-                    <li class="uk-active"><a href="#" title="{{ $congnghe['title'] }}">{{ $congnghe['title'] }}</a></li>
+                    <li class="uk-active"><a href="{{ route('loaicongnghe', ['id'=>$congnghe['loaicongnghe']['id'], 'slug'=>$congnghe['loaicongnghe']['slug']]) }}" title="{{ $congnghe['loaicongnghe'][$title] }}">{{ $congnghe['loaicongnghe'][$title] }}</a></li>
+                    <li class="uk-active"><a href="#" title="{{ $congnghe[$title] }}">{{ $congnghe[$title] }}</a></li>
 
                 </ul>
             </div>
@@ -40,13 +40,13 @@
                     <section class="prd-detail">
                         <section class="panel-body">
                             <div class="prd-contents">
-                                <div class="label"><span>Thông tin về {{ $congnghe['title'] }}</span></div>
+                                <div class="label"><span>{{ __('Thông tin về') }} {{ $congnghe[$title] }}</span></div>
                                 <div class="content detail-content">
                                     <p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 14px; text-align: center;">
                                         <img alt="" class="img-thumbnail" src="{{ $congnghe['image']['url'] }}" style="box-sizing: border-box; border: 1px solid rgb(221, 221, 221); vertical-align: middle; display: inline-block; max-width: 100%; height: 200px; padding: 4px; line-height: 1.42857; border-radius: 0px; transition: all 0.2s ease-in-out; font-family: Arial, sans-serif; width: 273.719px; object-fit: scale-down;">
                                     </p>
 
-                                    {!! $congnghe['noidung'] !!}
+                                    {!! $congnghe[$noidung] !!}
 
                                     <div>
                                         <i style="font-size: 13px; float: right">
@@ -58,7 +58,7 @@
                     </section>
                     <section class="prdcatalogue prd-same">
                         <header class="panel-head mb10">
-                            <div class="heading"><span>Mục cùng loại</span></div>
+                            <div class="heading"><span>{{ __('Mục cùng loại') }}</span></div>
                         </header>
                         <section class="panel-body">
                             <ul class="uk-grid uk-grid-small uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-xlarge-1-4 list-products" data-uk-grid-match="{target: '.product .title'}">
@@ -66,22 +66,22 @@
                                     <li>
                                         <div class="product">
                                             <div class="thumb">
-                                                <a class="image img-scaledown" href="{{ route('congnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
-                                                    <img src="{{ asset('/'). $item['image']['url'] }}" alt="{{ $item['title'] }}">
+                                                <a class="image img-scaledown" href="{{ route('congnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                    <img src="{{ asset('/'). $item['image']['url'] }}" alt="{{ $item[$title] }}">
                                                 </a>
                                             </div>
                                             <div class="infor">
                                                 <h3 class="title" style="min-height: 20px;">
-                                                    <a href="{{ route('congnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
-                                                        {{ $item['title'] }}													</a>
+                                                    <a href="{{ route('congnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                        {{ $item[$title] }}													</a>
                                                 </h3>
                                                 <div class="uk-flex uk-flex-middle uk-flex-space-between meta">
                                                     <div class="brand">
                                                         <img src="{{ asset('/images/entech.png') }}" alt="brand">
                                                     </div>
                                                     <div class="viewmore">
-                                                        <a href="{{ route('congnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
-                                                            Chi tiết <i class="fa fa-caret-right"></i>
+                                                        <a href="{{ route('congnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                            {{ __('Chi tiết') }} <i class="fa fa-caret-right"></i>
                                                         </a>
                                                     </div>
                                                 </div>

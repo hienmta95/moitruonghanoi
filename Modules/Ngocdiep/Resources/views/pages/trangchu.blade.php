@@ -18,42 +18,23 @@
                 <div class="uk-slidenav-position slider" data-uk-slider="{autoplay: true, autoplayInterval: 10500}">
                     <div class="uk-slider-container">
                         <ul class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">
-                            <li>
-                                <a class="box" href="http://ngocdiepfurniture.vn/"
-                                   title="Nội thất Ngọc Diệp" target="_blank">
+
+                            @foreach($section as $key=>$items)
+                                @if($key == 1)
+                                    $@foreach($items as $key2=>$item)
+                                        <li>
+                                            <a class="box" href="{{ $item['link'] }}"
+                                               title="{{ $item[$title] }}" target="_blank">
                                         <span class="icon">
-                                            <img src="http://ngocdiep.vn/uploads/images/lien-ket-web/noithat.png" alt="Nội thất Ngọc Diệp"/>
+                                            <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
                                         </span>
-                                    <span class="label" style="color: #000 !important;">Nội thất Ngọc Diệp</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="box" href="http://baobingocdiep.vn/"
-                                   title="Bao bì Ngọc Diệp" target="_blank">
-                                        <span class="icon">
-                                            <img src="http://ngocdiep.vn/uploads/images/lien-ket-web/baobi.png" alt="Bao bì Ngọc Diệp"/>
-                                        </span>
-                                    <span class="label" style="color: #000 !important;">Bao bì Ngọc Diệp</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="box" href="http://ngocdiepwindow.vn/"
-                                   title="NGOCDIEPWINDOW" target="_blank">
-                                        <span class="icon">
-                                            <img src="http://ngocdiep.vn/uploads/images/lien-ket-web/window.png" alt="NGOCDIEPWINDOW"/>
-                                        </span>
-                                    <span class="label" style="color: #000 !important;">NGOCDIEPWINDOW</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="box" href="http://nhomdinostar.vn/"
-                                   title="Nhôm Dinostar" target="_blank">
-                                        <span class="icon">
-                                            <img src="http://ngocdiep.vn/uploads/images/lien-ket-web/nhom.png" alt="Nhôm Dinostar"/>
-                                        </span>
-                                    <span class="label" style="color: #000 !important;">Nhôm Dinostar</span>
-                                </a>
-                            </li>
+                                                <span class="label" style="color: #000 !important;">{{ $item[$title] }}</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                @endif
+                            @endforeach
+
                         </ul>
                     </div>
                 </div>
@@ -65,109 +46,64 @@
             <section class="packaging-category">
                 <section class="panel-body">
                     <ul class="uk-grid uk-grid-medium uk-grid-width-1-2 uk-grid-width-large-1-4 list">
-                        <li>
-                            <div class="box">
-                                <h2 class="main-title">
-                                    <a href="/" title="Giới thiệu chung">
-                                        Giới thiệu chung                                            </a>
-                                </h2>
 
-                                <div class="content">
-                                    <div class="thumb">
-                                        <a class="image img-cover" href="gioi-thieu-chung.html"
-                                           title="Giới thiệu chung">
-                                            <img src="http://ngocdiep.vn/uploads/.thumbs/images/gioi-thieu-05.jpg" alt="Giới thiệu chung"/>
-                                        </a>
-                                    </div>
+                        @foreach($section as $key=>$items)
+                            @if($key == 2)
+                                @foreach($items as $key2=>$item)
+                                    <li>
+                                        <div class="box">
+                                            <h2 class="main-title">
+                                                <a href="{{ $item['link'] }}" title="{{ $item[$title] }}">
+                                                    {{ $item[$title] }}
+                                                </a>
+                                            </h2>
 
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="box">
-                                <h2 class="main-title">
-                                    <a href="thanh-tuu.html" title="Thành tựu ">
-                                        Thành tựu                                             </a>
-                                </h2>
+                                            <div class="content">
+                                                <div class="thumb hover1">
+                                                    <a class="image img-cover img-hover" href="{{ $item['link'] }}"
+                                                       title="{{ $item[$title] }}">
+                                                        <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
+                                                    </a>
+                                                </div>
 
-                                <div class="content">
-                                    <div class="thumb">
-                                        <a class="image img-cover" href="thanh-tuu.html"
-                                           title="Thành tựu ">
-                                            <img src="http://ngocdiep.vn/uploads/.thumbs/images/thanh-tuu-06(1).jpg" alt="Thành tựu "/>
-                                        </a>
-                                    </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            @endif
+                        @endforeach
 
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="box">
-                                <h2 class="main-title">
-                                    <a href="cac-cong-ty-thanh-vien.html" title="Các công ty thành viên">
-                                        Các công ty thành viên                                            </a>
-                                </h2>
-
-                                <div class="content">
-                                    <div class="thumb">
-                                        <a class="image img-cover" href="cac-cong-ty-thanh-vien.html"
-                                           title="Các công ty thành viên">
-                                            <img src="http://ngocdiep.vn/uploads/.thumbs/images/banner-gioi-thieu-02.jpg" alt="Các công ty thành viên"/>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="box">
-                                <h2 class="main-title">
-                                    <a href="tam-nhin-su-menh.html" title="Tầm nhìn - Sứ mệnh">
-                                        Tầm nhìn - Sứ mệnh                                            </a>
-                                </h2>
-
-                                <div class="content">
-                                    <div class="thumb">
-                                        <a class="image img-cover" href="tam-nhin-su-menh.html"
-                                           title="Tầm nhìn - Sứ mệnh">
-                                            <img src="http://ngocdiep.vn/uploads/.thumbs/images/tam-nhin-07.jpg" alt="Tầm nhìn - Sứ mệnh"/>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </section>
             </section>
 
             <section class="packaging-general">
-                <div class="uk-grid uk-grid-medium uk-grid-width-medium-1-2 uk-grid-width-large-1-2">
+                <div class="uk-grid uk-grid-medium uk-grid-width-medium-1-2 uk-grid-width-large-1-3">
                     <section class="panel project">
                         <header class="panel-head">
                             <h2 class="heading">
                                 <a href="#"
-                                   title="công nghệ xử lý môi trường">Các công nghệ của chúng tôi</a>
+                                   title="Các dự án xử lý môi trường">{{ __('Dự án') }}</a>
                             </h2>
                         </header>
                         <section class="panel-body">
                             <div class="uk-slidenav-position slideshow"
                                  data-uk-slideshow="{autoplay: true, autoplayInterval: 4500, animation: 'scroll'}">
                                 <ul class="uk-slideshow">
-                                    @foreach($loaicongnghe as $item)
+                                    @foreach($duans as $item)
                                         <li>
                                             <article class="article">
                                                 <div class="thumb">
-                                                    <a class="image img-cover" href="{{ route('loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"
-                                                       title="{{ $item['title'] }}">
+                                                    <a class="image img-cover" href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"
+                                                       title="{{ $item[$title] }}">
                                                         <img src="{{ asset('/'). $item['image']['url'] }}"
-                                                             alt="{{ $item['title'] }}"/>
+                                                             alt="{{ $item[$title] }}"/>
                                                     </a>
                                                 </div>
                                                 <div class="title">
-                                                    <a href="{{ route('loaicongnghe', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"
-                                                       title="{{ $item['title'] }}">
-                                                        {{ $item['title'] }}                                                                                                    </a>
+                                                    <a href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"
+                                                       title="{{ $item[$title] }}">
+                                                        {{ $item[$title] }}                                                                                                    </a>
                                                 </div>
                                             </article>
                                         </li>
@@ -184,9 +120,9 @@
                         <header class="panel-head">
                             <h2 class="heading uk-flex uk-flex-middle uk-flex-space-between">
                                 <a href="{{ route('tintuc.list') }}"
-                                   title="Tin tức">Tin tức</a>
+                                   title="Tin tức">{{ __('Tin tức') }}</a>
                                 <a class="more-cat" href="{{ route('tintuc.list') }}"
-                                   title="Tin tức">Xem thêm</a>
+                                   title="Tin tức">{{ __('Xem thêm') }}</a>
                             </h2>
                         </header>
                         <section class="panel-body">
@@ -199,20 +135,21 @@
                                 <li>
                                     <article class="article uk-clearfix">
                                         <div class="thumb">
-                                            <a class="image img-cover" href=""
-                                               title="{{ $item['title'] }}">
+                                            <a class="image img-cover" href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"
+                                               title="{{ $item[$title] }}">
                                                 <img src="{{ asset('/'). $item['image']['url'] }}"
-                                                     alt="{{ $item['title'] }}"/>
+                                                     alt="{{ $item[$title] }}"/>
                                             </a>
                                         </div>
                                         <div class="infor">
                                             <h3 class="title">
                                                 <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}"
-                                                   title="{{ $item['title'] }}">
-                                                    {{ $item['title'] }}                                                                </a>
+                                                   title="{{ $item[$title] }}">
+                                                    {{ $item[$title] }}                                                                </a>
                                             </h3>
 
-                                            <div class="meta">Ngày đăng                                                                : {{ date_format(date_create($item['updated_at']),"d-m-Y") }}
+                                            <div class="meta">
+                                                {{ __('Ngày đăng') }}: {{ date_format(date_create($item['updated_at']),"d-m-Y") }}
                                             </div>
                                         </div>
                                     </article>
@@ -230,6 +167,50 @@
                         </section>
                         <!-- .panel-body -->
                     </section><!-- .panel -->
+
+                    <section class="panel">
+                        <header class="panel-head">
+                            <h2 class="heading uk-flex uk-flex-middle uk-flex-space-between">
+                                <a href="#"
+                                   title="Video">Video</a>
+                            </h2>
+                        </header>
+
+                        <div class="row">
+                            {{--<div class="col-sm-12 col-xs-12">--}}
+                                {{--<div class="item_block" data-action="gallery/GalleryBlock/galleryBlock/78"--}}
+                                     {{--data-method="get"></div>--}}
+                            {{--</div>--}}
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="box-gallery styleTitle">
+                                    <div class="fotorama" data-nav="thumbs">
+                                        @foreach($section as $key=>$items)
+                                            @if($key == 3)
+                                                $@foreach($items as $key2=>$item)
+                                                    <a
+                                                        href="{{ $item['video'] }}"
+                                                        data-img="{{ $item['image'] }}">
+                                                        <img
+                                                            src="{{ $item['image'] }}"
+                                                            width="140" height="64">
+                                                    </a>
+                                                @endforeach
+                                            @endif
+                                        @endforeach
+
+                                        {{--<a--}}
+                                            {{--href="https://www.youtube.com/watch?v=SenGEDMPxVI"--}}
+                                            {{--data-img="http://ngocdiep.vn/uploads/images/dscf3512giai-nhat.jpg">--}}
+                                            {{--<img--}}
+                                                {{--src="http://ngocdiep.vn/uploads/images/dscf3512giai-nhat.jpg"--}}
+                                                {{--width="140" height="64">--}}
+                                        {{--</a>--}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                 </div>
             </section>

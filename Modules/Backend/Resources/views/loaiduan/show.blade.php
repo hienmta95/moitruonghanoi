@@ -22,8 +22,10 @@
         <tbody>
             <tr><th>ID</th><td>{{ $loaiduan->id }}</td></tr>
             <tr><th>Tiêu đề</th><td>{{ $loaiduan->title }}</td></tr>
+            <tr><th>Tiêu đề - English</th><td>{{ $loaiduan->title_en }}</td></tr>
             <tr><th>Link</th><td>{!! $loaiduan->slug ? $loaiduan->slug : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Giới thiệu</th><td>{!! $loaiduan->description ? $loaiduan->description : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Giới thiệu - English</th><td>{!! $loaiduan->description_en ? $loaiduan->description_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $loaiduan->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $loaiduan->updated_at }}</p></td></tr>
         </tbody>

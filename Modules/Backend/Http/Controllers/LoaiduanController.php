@@ -63,6 +63,7 @@ class LoaiduanController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
         ]);
 
@@ -109,17 +110,20 @@ class LoaiduanController extends Controller
         $id = $request->id;
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
         ]);
         $loaiduan = Loaiduan::find($id);
 
         if($loaiduan) {
             $loaiduan->title = $request->title;
+            $loaiduan->title_en = $request->title_en;
             $loaiduan->slug = $request->slug;
             $loaiduan->description = $request->description;
+            $loaiduan->description_en = $request->description_en;
             $loaiduan->save();
 
-            return view('backend::loaiduan.show', compact(['loaiduan']));
+            return redirect()->route('backend.loaiduan.show', $loaiduan->id);
         }
         return redirect()->route('backend.loaiduan.index');
     }

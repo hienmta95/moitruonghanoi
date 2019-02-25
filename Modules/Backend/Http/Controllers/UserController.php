@@ -21,6 +21,33 @@ class UserController extends Controller
         return view('backend::user.index');
     }
 
+    public function getThongtin(Request $request)
+    {
+        $info = User::where('id', '1')->first();
+        return view('backend::thongtin.update', compact('info'));
+    }
+
+    public function postThongtin(Request $request)
+    {
+        $request->validate([
+            'tel1' => 'required',
+            'tencongty' => 'required',
+            'emailcongty' => 'required',
+            'truso' => 'required'
+        ]);
+        $infoUpdate = User::where('id', '1')->update([
+            'tel1' => $request->tel1,
+            'tel2' => $request->tel2,
+            'truso' => $request->truso,
+            'tencongty' => $request->tencongty,
+            'emailcongty' => $request->emailcongty,
+            'facebook' => $request->facebook,
+            'youtube' => $request->youtube,
+        ]);
+        $info = User::where('id', '1')->first();
+        return view('backend::thongtin.update', compact('info'));
+    }
+
     public function indexData()
     {
         $users = User::all();
@@ -136,10 +163,32 @@ class UserController extends Controller
      */
     public function destroy(Request $request)
     {
-        $user = User::find($request->id);
-        $user->delete();
-
+        if($request->id != '1') {
+            $user = User::find($request->id);
+            $user->delete();
+        }
         return redirect()->route('backend.user.index');
+    }
+
+    public function getGioithieu(Request $request)
+    {
+        $gioithieu = User::where('id', '1')->first();
+        return view('backend::thongtin.gioithieu', compact('gioithieu'));
+    }
+
+    public function postGioithieu(Request $request)
+    {
+        $request->validate([
+            'gioithieu' => 'required',
+            'gioithieu_en' => 'required',
+        ]);
+        $infoUpdate = User::where('id', '1')->update([
+            'gioithieu' => $request->gioithieu,
+            'gioithieu_en' => $request->gioithieu_en,
+        ]);
+
+        $gioithieu = User::where('id', '1')->first();
+        return view('backend::thongtin.gioithieu', compact('gioithieu'));
     }
 
 }

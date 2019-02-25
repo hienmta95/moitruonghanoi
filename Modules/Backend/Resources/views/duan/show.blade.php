@@ -22,10 +22,13 @@
         <tbody>
             <tr><th>ID</th><td>{{ $duan->id }}</td></tr>
             <tr><th>Tiêu đề</th><td>{{ $duan->title }}</td></tr>
+            <tr><th>Tiêu đề - English</th><td>{{ $duan->title_en }}</td></tr>
             <tr><th>Link</th><td>{!! $duan->slug ? $duan->slug : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Thuộc loại dự án</th><td>{{ $duan->loaiduan->title }}</td></tr>
             <tr><th>Nội dung </th><td>{!! $duan->noidung ? $duan->noidung : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Nội dung - English</th><td>{!! $duan->noidung_en ? $duan->noidung_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Mô tả </th><td>{!! $duan->description ? $duan->description : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Mô tả - English</th><td>{!! $duan->description_en ? $duan->description_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $duan->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $duan->updated_at }}</p></td></tr>
             <tr><th>Hình ảnh</th><td>{!! $duan->image ? "<img  class='show-images' src='".asset('/').$duan->image->url."' alt=''>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>

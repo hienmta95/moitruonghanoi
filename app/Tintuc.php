@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tintuc extends Model
 {
     protected $fillable = [
-        'id', 'title', 'created_at', 'updated_at', 'description', 'image_id', 'slug', 'noidung'
+        'id', 'title', 'created_at', 'updated_at', 'description', 'image_id', 'slug', 'noidung', 'title_en', 'description_en', 'noidung_en'
     ];
 
 

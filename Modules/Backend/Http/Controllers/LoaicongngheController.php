@@ -68,6 +68,7 @@ class LoaicongngheController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'image' => 'required',
         ]);
@@ -120,6 +121,7 @@ class LoaicongngheController extends Controller
         $id = $request->id;
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
         ]);
         $loaicongnghe = Loaicongnghe::find($id);
@@ -133,12 +135,14 @@ class LoaicongngheController extends Controller
                 $image_id = $request->image_old;
             }
             $loaicongnghe->title = $request->title;
+            $loaicongnghe->title_en = $request->title_en;
             $loaicongnghe->slug = $request->slug;
             $loaicongnghe->image_id = $image_id;
             $loaicongnghe->description = $request->description;
+            $loaicongnghe->description_en = $request->description_en;
             $loaicongnghe->save();
 
-            return view('backend::loaicongnghe.show', compact(['loaicongnghe']));
+            return redirect()->route('backend.loaicongnghe.show', $loaicongnghe->id);
         }
         return redirect()->route('backend.loaicongnghe.index');
     }

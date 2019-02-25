@@ -24,6 +24,8 @@ if (! function_exists('active_route')) {
 
                 'backend.tintuc.index','backend.tintuc.show',
                 'backend.tintuc.create','backend.tintuc.edit',
+
+                'backend.gioithieu.edit'
             ];
         }
 
@@ -53,6 +55,14 @@ if (! function_exists('active_route')) {
                 'backend.loaisanpham.create','backend.loaisanpham.edit',
                 'backend.sanpham.index','backend.sanpham.show',
                 'backend.sanpham.create','backend.sanpham.edit',
+            ];
+        }
+
+        if ($route == 7) {
+            $route = [
+                'backend.section.index','backend.section.show',
+                'backend.section.create','backend.section.edit',
+                'backend.thongtin.edit'
             ];
         }
 
@@ -104,6 +114,7 @@ if (! function_exists('active_route')) {
                 <li class="{{ active_route('backend.user.*') }}"><a href="{{ route('backend.user.index') }}">» Admins </a></li>
                 <li class="{{ active_route('backend.lienhe.*') }}"><a href="{{ route('backend.lienhe.index') }}">» Liên hệ </a></li>
                 <li class="{{ active_route('backend.tintuc.*') }}"><a href="{{ route('backend.tintuc.index') }}">» Tin tức </a></li>
+                <li class="{{ active_route('backend.gioithieu.edit') }}"><a href="{{ route('backend.gioithieu.edit') }}">» Trang giới thiệu </a></li>
             </ul>
         </li>
         <!-- End User management data -->
@@ -152,6 +163,24 @@ if (! function_exists('active_route')) {
             <ul class="treeview-menu">
                 <li class="{{ active_route('backend.loaiduan.*') }}"><a href="{{ route('backend.loaiduan.index') }}">» Loại dự án</a></li>
                 <li class="{{ active_route('backend.duan.*') }}"><a href="{{ route('backend.duan.index') }}">» Dự án </a></li>
+            </ul>
+        </li>
+        <!-- End User management data -->
+
+        <!-- User management data -->
+        <li class="treeview {{ active_route(7) }}">
+            <a href="#">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>Quản lý trang chủ</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class=""><a href="{{ route('backend.section.index', '1') }}">» Phần 4 hình ảnh đầu tiên</a></li>
+                <li class=""><a href="{{ route('backend.section.index', '2') }}">» Phần 4 hình ảnh thứ hai</a></li>
+                <li class=""><a href="{{ route('backend.section.index', '3') }}">» Phần Videos </a></li>
+                <li class=""><a href="{{ route('backend.thongtin.update') }}">» Phần thông tin Footer </a></li>
             </ul>
         </li>
         <!-- End User management data -->

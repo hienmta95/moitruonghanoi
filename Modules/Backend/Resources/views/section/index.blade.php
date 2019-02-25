@@ -1,30 +1,30 @@
 @extends('backend::layouts.main')
 @section('page_title')
-Quản lý sản phẩm
+Quản lý trang chủ
 @endsection
 @section('breadcrumb')
 <ul class="breadcrumb">
     <li><a href="{{ route('backend.dashboard') }}">Home</a></li>
-    <li class="active">Quản lý sản phẩm</li>
+    <li class="active">Quản lý trang chủ</li>
 </ul>
 @endsection
 @section('content')
 <div class="sp-push-index">
     {{--<h1>Dreamhouse quản lý Admin</h1>--}}
     <p>
-        <a class="btn btn-success" href="{{ route('backend.product.create') }}">Tạo mới sản phẩm</a>
+        <a class="btn btn-success" href="{{ route('backend.section.create', ['position'=>$position]) }}">Tạo mới</a>
     </p>
     <div class="grid-view" id="w0">
         <div class="summary">
-            <table class="table table-striped table-bordered table-style" id="product-table">
+            <table class="table table-striped table-bordered table-style" id="section-table">
                 <thead>
                     <tr>
                         <th class="un-orderable-col">#</th>
                         <th class="orderable-col">ID</th>
-                        <th class="un-orderable-col">Tên sp</th>
-                        <th class="un-orderable-col">Tên trên link</th>
-                        <th class="un-orderable-col">Loại sản phẩm</th>
-                        <th class="orderable-col">Giá bán</th>
+                        <th class="un-orderable-col">Tiêu đề</th>
+                        <th class="un-orderable-col">Hình ảnh</th>
+                        <th class="un-orderable-col">Link</th>
+                        <th class="un-orderable-col">Video URL</th>
                         <th class="orderable-col">Ngày lập</th>
                         <th class="un-orderable-col">Hành động</th>
                     </tr>
@@ -49,7 +49,7 @@ Quản lý sản phẩm
 
 @push('scripts')
 <script>
-    var table = $('#product-table').DataTable({
+    var table = $('#section-table').DataTable({
         processing: true,
         serverSide: true,
         responsive: true,
@@ -57,7 +57,7 @@ Quản lý sản phẩm
         pageLength: 20,
         lengthChange: false,
         lengthMenu: [10, 20, 50, 100],
-        ajax: '{!! route('backend.product.indexData') !!}',
+        ajax: '{!! route('backend.section.indexData', ['position' => $position]) !!}',
         dom: '<"top"i>rt<"bottom"p><"clear">',
         order: [ [1, "desc"] ],
         language: {
@@ -70,27 +70,27 @@ Quản lý sản phẩm
             {data: 'DT_RowIndex', orderable: false, searchable: false},
             {data: 'id', name: 'id'},
             {data: 'title', name: 'title', orderable: false},
-            {data: 'slug', name: 'slug', orderable: false},
-            {data: 'category', name: 'category', orderable: false},
-            {data: 'price', name: 'price'},
+            {data: 'image', name: 'image', orderable: false},
+            {data: 'link', name: 'link', orderable: false},
+            {data: 'video', name: 'video', orderable: false},
             {data: 'created_at', name: 'created_at'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ],
         "initComplete": function () {
-            $('#product-table_paginate').css({"float": "left"});
-            var r = $('#product-table tfoot tr');
-            $('#product-table thead').append(r);
+            $('#section-table_paginate').css({"float": "left"});
+            var r = $('#section-table tfoot tr');
+            $('#section-table thead').append(r);
             this.api().columns().every(function (i) {
-                if (i != 0 && i != 8 && i != 1) {
+                if (i != 0 && i != 9 && i != 1) {
                     var column = this;
-                    var table = $('#product-table').DataTable();
+                    var table = $('#section-table').DataTable();
                     var input = document.createElement("input");
                     input.className = "form-control";
                     $(input).appendTo($(column.footer()).empty())
                         .on('change', function () {
                             column.search($(this).val() ? $(this).val() : '', false, false,true).draw();
                         });
-                    $('#product-table thead tr th input').css({"width": "100%", "margin": "0px 0px 0px 0px"});
+                    $('#section-table thead tr th input').css({"width": "100%", "margin": "0px 0px 0px 0px"});
                 }
             });
 

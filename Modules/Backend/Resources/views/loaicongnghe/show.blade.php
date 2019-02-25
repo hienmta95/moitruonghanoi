@@ -22,8 +22,10 @@
         <tbody>
             <tr><th>ID</th><td>{{ $loaicongnghe->id }}</td></tr>
             <tr><th>Tiêu đề</th><td>{{ $loaicongnghe->title }}</td></tr>
+            <tr><th>Tiêu đề - English</th><td>{{ $loaicongnghe->title_en }}</td></tr>
             <tr><th>Link</th><td>{!! $loaicongnghe->slug ? $loaicongnghe->slug : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Giới thiệu</th><td>{!! $loaicongnghe->description ? $loaicongnghe->description : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Giới thiệu - English</th><td>{!! $loaicongnghe->description_en ? $loaicongnghe->description_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $loaicongnghe->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $loaicongnghe->updated_at }}</p></td></tr>
             <tr><th>Hình ảnh</th><td>{!! $loaicongnghe->image ? "<img  class='show-images' src='".asset('/').$loaicongnghe->image->url."' alt=''>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>

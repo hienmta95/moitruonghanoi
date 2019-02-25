@@ -1,7 +1,7 @@
 @extends('ngocdiep::master')
 
 @section('page_title')
-    Tin tức
+    {{ __('Tin tức') }}
 @endsection
 
 @section('styles')
@@ -23,9 +23,9 @@
                 <ul class="uk-breadcrumb">
                     <li>
                         <a href="{{ route('trangchu') }}" title="Trang chủ">
-                            <i class="fa fa-home"></i> Trang chủ					</a>
+                            <i class="fa fa-home"></i> {{ __('Trang chủ') }}					</a>
                     </li>
-                    <li class="uk-active"><a href="#" title="Tin tức">Tin tức</a></li>
+                    <li class="uk-active"><a href="#" title="Tin tức">{{ __('Tin tức') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@
                 <div class="uk-width-large-3-4">
                     <section class="artcatalogue">
                         <header class="panel-head">
-                            <h1 class="heading"><span>Tin tức</span></h1>
+                            <h1 class="heading"><span>{{ __('Tin tức') }}</span></h1>
                         </header>
                         <section class="panel-body">
                             <ul class="uk-list list-article">
@@ -54,20 +54,20 @@
                                 <li>
                                     <article class="article uk-clearfix">
                                         <div class="thumb img-flash">
-                                            <a class="image img-cover" href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
-                                                <img src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item['title'] }}">
+                                            <a class="image img-cover" href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                <img src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item[$title] }}">
                                             </a>
                                         </div>
                                         <div class="infor">
                                             <h3 class="title">
-                                                <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
-                                                    {{ $item['title'] }}
+                                                <a href="{{ route('tintuc', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                    {{ $item[$title] }}
                                                 </a>
                                             </h3>
                                             <div class="description">
-                                                {!! $item['description'] !!}
+                                                {!! $item[$description] !!}
                                             </div>
-                                            <div class="date-time">
+                                            <div class="date-time" style="text-align: right">
                                                 <i>{{ date_format(date_create($item['updated_at']),"d-m-Y") }}</i>
                                             </div>
                                         </div>

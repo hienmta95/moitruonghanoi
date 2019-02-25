@@ -1,101 +1,129 @@
-@extends('frontend::master')
+@extends('ngocdiep::master')
 
 @section('page_title')
-    {{ $duan['title'] }}
+    {{ $duan[$title] }}
 @endsection
-
-@section('body_class', 'duan')
 
 @section('styles')
-    <link href="{{ asset('/assets/css/front_end/webwidget_vertical_menu.css') }}" rel="stylesheet" type="text/css">
-@endsection
 
-@section('sliders')
-    @include('frontend::pages.slide')
+    <style>
+        .panel-body {
+            padding: 0;
+        }
+        .uk-breadcrumb {
+            margin: 0;
+        }
+    </style>
+
 @endsection
 
 @section('content')
 
-    <article class="bg-article">
-        <div class="container">
-            <div class="row row-7">
+    <div id="prddetail-page" class="page-body">
+        <div class="breadcrumb">
+            <div class="uk-container uk-container-center">
+                <ul class="uk-breadcrumb">
+                    <li>
+                        <a href="{{ route('trangchu') }}" title="Trang chủ">
+                            <i class="fa fa-home"></i> {{ __('Trang chủ') }}
+                        </a>
+                    </li>
+                    <li class="uk-active"><a href="{{ route('loaiduan', ['id'=>$duan['loaiduan']['id'], 'slug'=>$duan['loaiduan']['slug']]) }}" title="{{ $duan['loaiduan'][$title] }}">{{ $duan['loaiduan'][$title] }}</a></li>
+                    <li class="uk-active"><a href="#" title="{{ $duan[$title] }}">{{ $duan[$title] }}</a></li>
 
-                <div class="col-md-12 pdd-7">
-                    <ul class="breadcrumb">
-                        <li><a href="/">Trang chủ</a></li>
-                        <li><a href="{{ route('frontend.loaiduan', ['id'=>$duan['loaiduan']['id'], 'slug'=>$duan['loaiduan']['slug']]) }}">{{ $duan['loaiduan']['title'] }}</a></li>
-                        <li class="active"><a href="">{{ $duan['title'] }}</a></li>
-                    </ul>
-                </div>
+                </ul>
+            </div>
+        </div>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-medium">
 
-                <div class="col-md-9 col-sm-12 col-xs-12 pdd-7">
-                    <div class="row row-15">
-                        <div class="col-md-12 pdd-15">
-                            <div class="content-detail">
-                                <div class="tabs-detail">
-                                    <ul class="nav nav-tabs" style="margin-top: 0px">
-                                        <li class="active"><a data-toggle="tab" href="#home-dt">Thông tin chi tiết</a></li>
-                                        <li class="hidden"><a data-toggle="tab" href="#menu1-dt"></a></li>
-                                        <li class="hidden"><a data-toggle="tab" href="#menu2-dt"></a></li>
-                                        <li class="hidden"><a data-toggle="tab" href="#menu2"></a></li>
-                                        <li class="hidden"><a data-toggle="tab" href="#menu3"></a></li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div id="home-dt" class="tab-pane fade in active">
-                                            {!! $duan['noidung'] !!}
-                                            <div class="date-time" style="margin-bottom: 20px">
-                                                {{ date_format(date_create($duan['updated_at']),"d-m-Y") }}
-                                            </div>
-                                        </div>
+                <div class="uk-width-large-1-4 uk-visible-large">
+                    <aside class="aside">
+
+                        @include('ngocdiep::pages.danhmucduan')
+
+                        @include('ngocdiep::pages.danhmucmail')
+
+                        @include('ngocdiep::pages.tinnoibat')
+
+                    </aside><!-- .aside -->
+                </div><!-- .uk-width -->
+
+                <div class="uk-width-large-3-4">
+                    <section class="prd-detail">
+                        <section class="panel-body">
+                            <div class="prd-contents">
+                                <div class="label"><span>{{ __('Thông tin về') }} {{ $duan[$title] }}</span></div>
+                                <div class="content detail-content">
+                                    <p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 14px; text-align: center;">
+                                        <img alt="" class="img-thumbnail" src="{{ $duan['image']['url'] }}" style="box-sizing: border-box; border: 1px solid rgb(221, 221, 221); vertical-align: middle; display: inline-block; max-width: 100%; height: 200px; padding: 4px; line-height: 1.42857; border-radius: 0px; transition: all 0.2s ease-in-out; font-family: Arial, sans-serif; width: 273.719px; object-fit: scale-down;">
+                                    </p>
+
+                                    {!! $duan[$noidung] !!}
+
+                                    <div>
+                                        <i style="font-size: 13px; float: right">
+                                            {{ date_format(date_create($duan['updated_at']),"d-m-Y") }}</i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix-15"></div>
-                            <div class="prod-lq">
-                                <h2 class="title-right">
-                                <span>
-                                    Dự án liên quan
-                                </span>
-                                </h2>
-                                <div class="row row-7">
-                                    @foreach($duanlienquan as $item)
-                                        <div class="col-md-4 col-sm-4 col-xs-6 col-480 pdd-7">
-                                            <div class="box-prod-pages clearfix">
-                                                {{--<a href="{{ route('frontend.duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" class=""><img class="w_100" src="{{ asset('/').$item['image']['url'] }}" alt="{{ $item['title'] }}"></a>--}}
-                                                <div class="dsc-prod-pages">
-                                                    <h3 class="name-prod-page">
-                                                        <a href="{{ route('frontend.duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}">{{ $item['title'] }}</a>
-                                                    </h3>
-                                                    {{--<div class="code-prod-pages">--}}
-                                                        {{--Mã SP: <span></span>--}}
-                                                    {{--</div>--}}
-                                                    <div class="btn view-prod-pages hvr-shutter-in-horizontal">
-                                                        <a href="{{ route('frontend.duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" style="color:#fff">Chi tiết</a>
+                        </section>
+                    </section>
+                    <section class="prdcatalogue prd-same">
+                        <header class="panel-head mb10">
+                            <div class="heading"><span>{{ __('Mục cùng loại') }}</span></div>
+                        </header>
+                        <section class="panel-body">
+                            <ul class="uk-grid uk-grid-small uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-xlarge-1-4 list-products" data-uk-grid-match="{target: '.product .title'}">
+                                @foreach($duanlienquan as $item)
+                                    <li>
+                                        <div class="product">
+                                            <div class="thumb">
+                                                <a class="image img-scaledown" href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                    <img src="{{ asset('/'). $item['image']['url'] }}" alt="{{ $item[$title] }}">
+                                                </a>
+                                            </div>
+                                            <div class="infor">
+                                                <h3 class="title" style="min-height: 20px;">
+                                                    <a href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                        {{ $item[$title] }}													</a>
+                                                </h3>
+                                                <div class="uk-flex uk-flex-middle uk-flex-space-between meta">
+                                                    <div class="brand">
+                                                        <img src="{{ asset('/images/entech.png') }}" alt="brand">
+                                                    </div>
+                                                    <div class="viewmore">
+                                                        <a href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
+                                                            {{ __('Chi tiết') }} <i class="fa fa-caret-right"></i>
+                                                        </a>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                            </div><!-- .infor -->
+                                        </div><!-- .product -->
+                                    </li>
+                                @endforeach
+
+                            </ul>
+                        </section>
+                    </section><!-- .prd-same -->
                 </div>
 
-                <div class="col-md-3 hidden-sm hidden-xs pdd-7">
-                    @include('frontend::pages.tinnoibat')
-                </div>
+                <div class="uk-width-large-1-4 uk-visible-small">
+                    <aside class="aside">
 
-                <div class="clearfix-20 visible-sm visible-xs"></div>
+                        @include('ngocdiep::pages.danhmucduan')
 
-                <div class="col-md-3 visible-sm visible-xs pdd-7">
-                    @include('frontend::pages.tinnoibat')
-                </div>
+                        @include('ngocdiep::pages.danhmucmail')
+
+                        @include('ngocdiep::pages.tinnoibat')
+
+                    </aside><!-- .aside -->
+                </div><!-- .uk-width -->
+
 
             </div>
         </div>
-    </article>
-    <!-- End Main -->
+    </div>
 
 @endsection
 

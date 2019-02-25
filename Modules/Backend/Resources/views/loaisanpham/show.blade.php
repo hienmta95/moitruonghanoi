@@ -22,8 +22,10 @@
         <tbody>
             <tr><th>ID</th><td>{{ $loaisanpham->id }}</td></tr>
             <tr><th>Tiêu đề</th><td>{{ $loaisanpham->title }}</td></tr>
+            <tr><th>Tiêu đề - English</th><td>{{ $loaisanpham->title_en }}</td></tr>
             <tr><th>Link</th><td>{!! $loaisanpham->slug ? $loaisanpham->slug : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Giới thiệu</th><td>{!! $loaisanpham->description ? $loaisanpham->description : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Giới thiệu - English</th><td>{!! $loaisanpham->description_en ? $loaisanpham->description_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $loaisanpham->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $loaisanpham->updated_at }}</p></td></tr>
             <tr><th>Hình ảnh</th><td>{!! $loaisanpham->image ? "<img  class='show-images' src='".asset('/').$loaisanpham->image->url."' alt=''>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>

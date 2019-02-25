@@ -1,6 +1,8 @@
 @extends('ngocdiep::master')
 
-@section('page_title', 'Liên hệ')
+@section('page_title')
+    {{ __('Liên hệ') }}
+@endsection
 
 @section('styles')
     <style>
@@ -21,11 +23,11 @@
                 <ul class="uk-breadcrumb">
                     <li>
                         <a href="{{ route('trangchu') }}" title="Trang chủ">
-                            <i class="fa fa-home"></i>Trang chủ					</a>
+                            <i class="fa fa-home"></i>{{ __('Trang chủ') }}					</a>
                     </li>
                     <li class="uk-active">
                         <a href="{{ route('lienhe') }}" title="Liên hệ">
-                            Liên hệ					</a>
+                            {{ __('Liên hệ') }}					</a>
                     </li>
                 </ul>
             </div>
@@ -36,7 +38,7 @@
                     <div class="uk-grid uk-grid-medium">
                         <div class="uk-width-large-1-3 uk-width-xlarge-3-4">
                             <div class="contact-infomation">
-                                <div class="note">Cám ơn quý khách đã ghé thăm website chúng tôi..</div>
+                                <div class="note">{{ __('Cám ơn quý khách đã ghé thăm website chúng tôi..') }}</div>
                                 <h2 class="company">CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI</h2>
                                 <div class="address">
                                 </div>
@@ -52,24 +54,25 @@
     display: inline-block;
     padding-left: 0px;
     white-space: normal;
-    font-weight: normal;">Vui lòng nhập đầy đủ thông tin dưới đây, chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất.</div>
-                                <form action="" method="" class="uk-form form">
+    font-weight: normal;">{{ __('Vui lòng nhập đầy đủ thông tin dưới đây, chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất.') }}</div>
+                                <form action="{{ route('post.lienhe') }}" method="post" class="uk-form form">
+                                    @csrf
                                     <div class="uk-grid lib-grid-20 uk-grid-width-small-1-2 uk-grid-width-large-1-1">
                                         <div class="form-row">
-                                            <input type="text" name="fullname" value="" class="uk-width-1-1 input-text" placeholder="Họ và tên *">
+                                            <input type="text" name="hoten" value="" class="uk-width-1-1 input-text" placeholder="Họ và tên *">
                                         </div>
                                         <div class="form-row">
                                             <input type="text" name="email" value="" class="uk-width-1-1 input-text" placeholder="Email *">
                                         </div>
                                         <div class="form-row">
-                                            <input type="text" name="phone" value="" class="uk-width-1-1 input-text" placeholder="Số điện thoại *">
+                                            <input type="text" name="sdt" value="" class="uk-width-1-1 input-text" placeholder="Số điện thoại *">
                                         </div>
                                         <div class="form-row">
-                                            <input type="text" name="address" value="" class="uk-width-1-1 input-text" placeholder="Địa chỉ *">
+                                            <input type="text" name="diachi" value="" class="uk-width-1-1 input-text" placeholder="Địa chỉ *">
                                         </div>
                                     </div><!-- end .uk-grid -->
                                     <div class="form-row">
-                                        <textarea name="message" value="" class="uk-width-1-1 form-textarea" style="height: 175px;" placeholder="Nội dung *"></textarea>
+                                        <textarea name="noidung" value="" class="uk-width-1-1 form-textarea" style="height: 175px;" placeholder="Nội dung *"></textarea>
                                     </div>
                                     <div class="form-row uk-text-right">
                                         <input type="submit" name="create" class="btn-submit" value="Gửi thông tin">

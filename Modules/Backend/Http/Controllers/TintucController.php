@@ -68,8 +68,10 @@ class tintucController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
             'image' => 'required',
         ]);
 
@@ -96,6 +98,7 @@ class tintucController extends Controller
         $tintuc = Tintuc::with(['image'])->find($id);
         if($tintuc)
             return view('backend::tintuc.show', compact(['tintuc']));
+
         return redirect()->route('backend.tintuc.index');
     }
 
@@ -122,8 +125,10 @@ class tintucController extends Controller
         $id = $request->id;
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
         ]);
         $tintuc = Tintuc::find($id);
 
@@ -136,13 +141,17 @@ class tintucController extends Controller
                 $image_id = $request->image_old;
             }
             $tintuc->title = $request->title;
+            $tintuc->title_en = $request->title_en;
             $tintuc->slug = $request->slug;
             $tintuc->noidung = $request->noidung;
+            $tintuc->noidung_en = $request->noidung_en;
             $tintuc->image_id = $image_id;
             $tintuc->description = $request->description;
+            $tintuc->description_en = $request->description_en;
             $tintuc->save();
 
-            return view('backend::tintuc.show', compact(['tintuc']));
+            return redirect()->route('backend.tintuc.show', $tintuc->id);
+
         }
         return redirect()->route('backend.tintuc.index');
     }

@@ -70,9 +70,12 @@ class DuanController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
             'loaiduan_id' => 'required',
+            'image' => 'required',
         ]);
 
         $image_id = 0;
@@ -125,8 +128,10 @@ class DuanController extends Controller
         $id = $request->id;
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
         ]);
         $duan = Duan::find($id);
 
@@ -139,14 +144,17 @@ class DuanController extends Controller
                 $image_id = $request->image_old;
             }
             $duan->title = $request->title;
+            $duan->title_en = $request->title_en;
             $duan->slug = $request->slug;
             $duan->loaiduan_id = $request->loaiduan_id;
             $duan->noidung = $request->noidung;
+            $duan->noidung_en = $request->noidung_en;
             $duan->image_id = $image_id;
             $duan->description = $request->description;
+            $duan->description_en = $request->description_en;
             $duan->save();
 
-            return view('backend::duan.show', compact(['duan']));
+            return redirect()->route('backend.duan.show', $duan->id);
         }
         return redirect()->route('backend.duan.index');
     }

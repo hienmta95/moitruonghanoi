@@ -70,9 +70,12 @@ class CongngheController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
             'loaicongnghe_id' => 'required',
+            'image' => 'required',
         ]);
 
         $image_id = 0;
@@ -125,8 +128,10 @@ class CongngheController extends Controller
         $id = $request->id;
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'noidung' => 'required',
+            'noidung_en' => 'required',
         ]);
         $congnghe = Congnghe::find($id);
 
@@ -139,14 +144,16 @@ class CongngheController extends Controller
                 $image_id = $request->image_old;
             }
             $congnghe->title = $request->title;
+            $congnghe->title_en = $request->title_en;
             $congnghe->slug = $request->slug;
             $congnghe->loaicongnghe_id = $request->loaicongnghe_id;
             $congnghe->noidung = $request->noidung;
+            $congnghe->noidung_en = $request->noidung_en;
             $congnghe->image_id = $image_id;
-            $congnghe->description = $request->description;
+            $congnghe->description_en = $request->description_en;
             $congnghe->save();
 
-            return view('backend::congnghe.show', compact(['congnghe']));
+            return redirect()->route('backend.congnghe.show', $congnghe->id);
         }
         return redirect()->route('backend.congnghe.index');
     }

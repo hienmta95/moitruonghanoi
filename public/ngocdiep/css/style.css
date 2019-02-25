@@ -2108,3 +2108,28 @@
 @media (max-width: 479px) {
 	.videos-catalogue .video .thumb {height: 125px;}
 }
+
+.hover1:hover .img-hover img {
+    opacity: 0.2;
+    transition: 1s;
+}
+
+.hover1:hover .img-hover::after {
+    display: block;
+    transition: 1s;
+}
+
+.img-hover::after {
+    content: '';
+    width: 97%;
+    transition: 1s;
+    height: 177px;
+    background-image: url(img/entech.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px auto;
+    background-color: #598e56cf;
+    position: absolute;
+    top: 0;
+    display: none;
+}

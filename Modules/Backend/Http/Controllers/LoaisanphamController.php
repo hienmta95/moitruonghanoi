@@ -68,6 +68,7 @@ class LoaisanphamController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
             'image' => 'required',
         ]);
@@ -119,7 +120,7 @@ class LoaisanphamController extends Controller
     {
         $id = $request->id;
         $request->validate([
-            'title' => 'required',
+            'title_en' => 'required',
             'slug' => 'required',
         ]);
         $loaisanpham = Loaisanpham::find($id);
@@ -133,12 +134,14 @@ class LoaisanphamController extends Controller
                 $image_id = $request->image_old;
             }
             $loaisanpham->title = $request->title;
+            $loaisanpham->title_en = $request->title_en;
             $loaisanpham->slug = $request->slug;
             $loaisanpham->image_id = $image_id;
             $loaisanpham->description = $request->description;
+            $loaisanpham->description_en = $request->description_en;
             $loaisanpham->save();
 
-            return view('backend::loaisanpham.show', compact(['loaisanpham']));
+            return redirect()->route('backend.loaisanpham.show', $loaisanpham->id);
         }
         return redirect()->route('backend.loaisanpham.index');
     }

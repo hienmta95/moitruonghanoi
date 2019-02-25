@@ -22,10 +22,13 @@
         <tbody>
             <tr><th>ID</th><td>{{ $congnghe->id }}</td></tr>
             <tr><th>Tiêu đề</th><td>{{ $congnghe->title }}</td></tr>
+            <tr><th>Tiêu đề - English</th><td>{{ $congnghe->title_en }}</td></tr>
             <tr><th>Link</th><td>{!! $congnghe->slug ? $congnghe->slug : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Thuộc loại công nghệ</th><td>{{ $congnghe->loaicongnghe->title }}</td></tr>
             <tr><th>Nội dung </th><td>{!! $congnghe->noidung ? $congnghe->noidung : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Nội dung - English</th><td>{!! $congnghe->noidung_en ? $congnghe->noidung_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Mô tả </th><td>{!! $congnghe->description ? $congnghe->description : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Mô tả - English</th><td>{!! $congnghe->description_en ? $congnghe->description_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $congnghe->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $congnghe->updated_at }}</p></td></tr>
             <tr><th>Hình ảnh</th><td>{!! $congnghe->image ? "<img  class='show-images' src='".asset('/').$congnghe->image->url."' alt=''>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>

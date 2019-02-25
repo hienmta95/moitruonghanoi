@@ -22,9 +22,12 @@
         <tbody>
             <tr><th>ID</th><td>{{ $tintuc->id }}</td></tr>
             <tr><th>Tiêu đề</th><td>{{ $tintuc->title }}</td></tr>
+            <tr><th>Tiêu đề - English</th><td>{{ $tintuc->title_en }}</td></tr>
             <tr><th>Link</th><td>{!! $tintuc->slug ? $tintuc->slug : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Nội dung </th><td>{!! $tintuc->noidung ? $tintuc->noidung : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Nội dung - English</th><td>{!! $tintuc->noidung_en ? $tintuc->noidung_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Mô tả </th><td>{!! $tintuc->description ? $tintuc->description : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
+            <tr><th>Mô tả - English</th><td>{!! $tintuc->description_en ? $tintuc->description_en : "<span class='not-set'>(not set)</span>"  !!}</td></tr>
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $tintuc->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $tintuc->updated_at }}</p></td></tr>
             <tr><th>Hình ảnh</th><td>{!! $tintuc->image ? "<img  class='show-images' src='".asset('/').$tintuc->image->url."' alt=''>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>
