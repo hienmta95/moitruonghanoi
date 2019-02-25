@@ -2121,10 +2121,10 @@
     transition: 1s;
 }
 
-@media (max-width: 8000px) {
+@media (max-width: 800px) {
 
-    .img-hover::after {
-        height: 130px !important;
+    .img-hover.img-cover::after {
+        height: 130px;
     }
 }
 
