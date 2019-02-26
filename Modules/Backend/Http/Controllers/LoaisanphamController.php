@@ -4,6 +4,7 @@ namespace Modules\Backend\Http\Controllers;
 
 use Auth;
 use App\Loaisanpham;
+use App\Sanpham;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -158,6 +159,12 @@ class LoaisanphamController extends Controller
         $imageFile = new ImageFile();
         $image_delete = $imageFile->deleteImage($image_id);
         $loaisanpham->delete();
+
+        $abcs = Sanpham::where('loaisanpham_id', $id)->get();
+        foreach($abcs as $abc) {
+            $image_delete = $imageFile->deleteImage($abc->image_id);
+            $abc->delete();
+        }
 
         return redirect()->route('backend.loaisanpham.index');
     }

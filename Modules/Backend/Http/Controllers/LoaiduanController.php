@@ -4,6 +4,7 @@ namespace Modules\Backend\Http\Controllers;
 
 use Auth;
 use App\Loaiduan;
+use App\Duan;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -136,7 +137,14 @@ class LoaiduanController extends Controller
     {
         $id = $request->id;
         $loaiduan = Loaiduan::find($id);
+        $imageFile = new ImageFile();
         $loaiduan->delete();
+
+        $abcs = Duan::where('loaiduan_id', $id)->get();
+        foreach($abcs as $abc) {
+            $image_delete = $imageFile->deleteImage($abc->image_id);
+            $abc->delete();
+        }
 
         return redirect()->route('backend.loaiduan.index');
     }

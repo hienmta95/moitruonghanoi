@@ -4,6 +4,7 @@ namespace Modules\Backend\Http\Controllers;
 
 use Auth;
 use App\Loaicongnghe;
+use App\Congnghe;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -159,6 +160,12 @@ class LoaicongngheController extends Controller
         $imageFile = new ImageFile();
         $image_delete = $imageFile->deleteImage($image_id);
         $loaicongnghe->delete();
+
+        $abcs = Congnghe::where('loaicongnghe_id', $id)->get();
+        foreach($abcs as $abc) {
+            $image_delete = $imageFile->deleteImage($abc->image_id);
+            $abc->delete();
+        }
 
         return redirect()->route('backend.loaicongnghe.index');
     }
