@@ -27,6 +27,12 @@ Update thông tin
                 <div class="help-block">@if($errors->has('emailcongty')) {{ $errors->first('emailcongty') }} @endif</div>
             </div>
 
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['emailcongty2']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Email công ty 2</label>
+                <input class="form-control{{ $errors->has('emailcongty2') ? ' has-error' : '' }}" name="emailcongty2" type="text" value="{{ $info->emailcongty2 }}">
+                <div class="help-block">@if($errors->has('emailcongty2')) {{ $errors->first('emailcongty2') }} @endif</div>
+            </div>
+
             <div class="form-group  @if (count($errors->all())) {{$errors->has(['truso']) ? 'has-error' : 'has-success'}} @endif">
                 <label class="control-label">Địa chỉ trụ sở<span class="required">*</span></label>
                 <input class="form-control{{ $errors->has('truso') ? ' has-error' : '' }}" name="truso" type="text" value="{{ $info->truso }}">

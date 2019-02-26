@@ -69,7 +69,7 @@
             <div class="uk-flex uk-flex-middle uk-flex-right container">
                 <ul class="uk-list uk-clearfix site-link" style="margin: 0px">
                     <li>
-                        <a href="gioi-thieu" title="Về chúng tôi">
+                        <a href="{{ route('gioithieu') }}" title="Về chúng tôi">
 									<span class="icon">
 										<img src="{{ asset('/ngocdiep/img/icon_1.png') }}" alt="icon-menu-top" />
 									</span>
@@ -97,9 +97,20 @@
         <div class="uk-container uk-container-center">
             <div class="uk-flex uk-flex-middle uk-flex-space-between container">
                 <div class="logo">
-                    <a href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
+                    <a style="float: left" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
                         <img style="max-width: 75px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
                     </a>
+                    <div class="logo-brand" style="display: inline-block;
+    max-width: 190px;
+    vertical-align: middle;
+    margin-left: 10px;
+    min-width: 161px;
+    margin-top: 10px;">
+                        <h4 style="font-size: 11px;
+    line-height: 16px;
+    color: #56884c;
+    font-weight: 700;">{{ $info['tencongty'] }}</h4>
+                    </div>
                 </div>
                 <nav class="main-navs">
                     <ul class="uk-navbar-nav main-menus">
@@ -176,7 +187,7 @@
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
         <div class="pc-search">
-            <form action="/" method="get" class="uk-form form">
+            <form action="{{ route('search') }}" method="get" class="uk-form form">
                 <input type="text" name="key" class="uk-width-1-1 input-text" placeholder="{{ __('Nhập từ khóa tìm kiếm') }}" />
                 <button type="submit" class="btn-submit">{{ __('Tìm kiếm') }}</button>
             </form>
@@ -187,7 +198,7 @@
 
 <!-- MOBILE HEADER -->
 <header class="mobile-header uk-hidden-large">
-    
+
     <section class="upper">
         <a class="moblie-menu-btn skin-1" href="#offcanvas" class="offcanvas" data-uk-offcanvas="{target:'#offcanvas'}">
             <span>Menu</span>
@@ -243,7 +254,7 @@
                         </p>
 
                         <p><strong>Emai:</strong><br />
-                            {{ $info['emailcongty'] }}</p>
+                            {{ $info['emailcongty'] }} | {{ $info['emailcongty2'] }}</p>
 
                         <p><strong>Tel:</strong><br />
                             {{ $info['tel1'] }} | {{ $info['tel2'] }}</p>
@@ -298,7 +309,7 @@
 ﻿
 <div id="offcanvas" class="uk-offcanvas offcanvas">
     <div class="uk-offcanvas-bar">
-        <form class="uk-search" action="/" data-uk-search="{}">
+        <form class="uk-search" action="{{ route('search') }}" data-uk-search="{}">
             <input class="uk-search-field" type="search" name="key" placeholder="{{ __('Nhập từ khóa tìm kiếm') }}">
         </form>
 

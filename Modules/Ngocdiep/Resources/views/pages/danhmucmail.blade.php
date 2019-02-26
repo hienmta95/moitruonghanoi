@@ -4,7 +4,7 @@
     </header>
     <section class="panel-body">
         <div class="thumb">
-            <a class="image img-scaledown" href="#" title="Email sent" target="_blank">
+            <a class="image img-scaledown" href="mailto:{{ $info['emailcongty'] }}" title="Email sent">
                 <img src="{{ asset('/ngocdiep/img/email_hosting.png') }}" alt="Email hosting">
             </a>
         </div>

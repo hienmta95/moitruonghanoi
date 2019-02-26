@@ -41,6 +41,7 @@ class UserController extends Controller
             'truso' => $request->truso,
             'tencongty' => $request->tencongty,
             'emailcongty' => $request->emailcongty,
+            'emailcongty2' => $request->emailcongty2,
             'facebook' => $request->facebook,
             'youtube' => $request->youtube,
         ]);

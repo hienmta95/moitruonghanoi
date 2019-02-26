@@ -16,9 +16,12 @@ use App\Sanpham;
 use App\Duan;
 use App\Section;
 use App\User;
+use App\Notifications\ToUser;
+use App\Notifications\ToAdmin;
 
 class FrontendController extends Controller
 {
+    protected $info;
     protected $lang;
     function __construct(Request $request)
     {
@@ -48,6 +51,7 @@ class FrontendController extends Controller
         }])->orderBy('id', 'desc')->get()->toArray();
         $tintuc = Tintuc::with(['image'])->orderBy('id', 'desc')->get()->toArray();
         $info = User::where('id', '1')->first()->toArray();
+        $this->info = $info;
 
         view()->share('slide', $slide);
         view()->share('loaicongnghe', $loaicongnghe);
@@ -196,7 +200,13 @@ class FrontendController extends Controller
         $req = $request->all();
         $create = Lienhe::create($req);
         if($create)
+        {
+            $this->sendMailUser($request->email, $request->all());
+            $this->sendMailAdmin(($this->info)['emailcongty'], $request->all());
+
             return redirect()->route('get.thanhcong');
+
+        }
         return view('ngocdiep::pages.lienhe');
     }
 
@@ -219,6 +229,21 @@ class FrontendController extends Controller
     {
         $data = User::where('id', '1')->first()->toArray();
         return view('ngocdiep::pages.gioithieu', compact('data'));
+    }
+
+
+    public function sendMailUser($email, $data)
+    {
+        $user = new User();
+        $user->email = $email;
+        $user->notify(new ToUser($data));
+    }
+
+    public function sendMailAdmin($email, $data)
+    {
+        $user = new User();
+        $user->email = $email;
+        $user->notify(new ToAdmin($data));
     }
 
 }

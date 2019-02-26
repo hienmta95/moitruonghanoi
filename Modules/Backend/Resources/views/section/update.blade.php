@@ -18,13 +18,13 @@
             <input type="hidden" name="_method" value="PUT"/>
 
             <div class="form-group @if (count($errors->all())) {{$errors->has(['title']) ? 'has-error' : 'has-success'}} @endif" >
-                <label class="control-label">Tiêu đề</label>
+                <label class="control-label">Tiêu đề<span class="required">*</span></label>
                 <input type="text" class="form-control{{ $errors->has('title') ? ' has-error' : '' }}" name="title" value="{{ $section->title }}">
                 <div class="help-block">@if($errors->has('title')) {{ $errors->first('title') }} @endif</div>
             </div>
 
             <div class="form-group @if (count($errors->all())) {{$errors->has(['title_en']) ? 'has-error' : 'has-success'}} @endif" >
-                <label class="control-label">Tiêu đề - English</label>
+                <label class="control-label">Tiêu đề - English<span class="required">*</span></label>
                 <input type="text" class="form-control{{ $errors->has('title_en') ? ' has-error' : '' }}" name="title_en" value="{{ $section->title_en }}">
                 <div class="help-block">@if($errors->has('title_en')) {{ $errors->first('title_en') }} @endif</div>
             </div>
@@ -45,7 +45,7 @@
                 <div>
                     <img class="show-images"  class="img-thumbnail" src="{!! $section->image ? asset('/').$section->image->url : ""!!}" alt="web_image" title="image">
                 </div>
-                <label class="control-label">Hình ảnh</label>
+                <label class="control-label">Hình ảnh<span class="required">*</span></label>
                 <input type="hidden" name="image_old" value="{{ $section->image_id  }}">
                 <input id="input-b1" name="image" type="file" class="file" accept=".jpg,.gif,.png,.jpeg">
                 <div class="help-block">@if($errors->has('image')) {{ $errors->first('image') }} @endif</div>
