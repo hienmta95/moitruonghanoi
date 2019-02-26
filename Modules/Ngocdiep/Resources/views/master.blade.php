@@ -187,9 +187,7 @@
 
 <!-- MOBILE HEADER -->
 <header class="mobile-header uk-hidden-large">
-    {{--<div class="topbar">--}}
-        {{--{{ __('Tự hào là thương hiệu quốc gia') }}	--}}
-    {{--</div>--}}
+    
     <section class="upper">
         <a class="moblie-menu-btn skin-1" href="#offcanvas" class="offcanvas" data-uk-offcanvas="{target:'#offcanvas'}">
             <span>Menu</span>

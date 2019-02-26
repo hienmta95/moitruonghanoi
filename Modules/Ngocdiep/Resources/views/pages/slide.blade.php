@@ -3,7 +3,7 @@
         <ul class="uk-slideshow">
             @foreach($slide as $item)
                 <li>
-                    <a class="image img-cover" href="">
+                    <a class="image img-cover" href="{{ $item['link'] }}">
                         <img src="{{ asset('/').$item['image']['url'] }}" alt="" />
                     </a>
                 </li>
