@@ -8,6 +8,8 @@ use App\Duan;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Backend\Components\ImageFile;
+
 use DataTables;
 
 class LoaiduanController extends Controller
