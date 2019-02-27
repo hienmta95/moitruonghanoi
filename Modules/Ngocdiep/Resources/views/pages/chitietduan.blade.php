@@ -78,11 +78,11 @@
                                 @foreach($duanlienquan as $item)
                                     <li>
                                         <div class="product">
-                                            <div class="thumb">
-                                                <a class="image img-scaledown" href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
-                                                    <img src="{{ asset('/'). $item['image']['url'] }}" alt="{{ $item[$title] }}">
-                                                </a>
-                                            </div>
+                                            {{--<div class="thumb">--}}
+                                                {{--<a class="image img-scaledown" href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">--}}
+                                                    {{--<img src="{{ asset('/'). $item['image']['url'] }}" alt="{{ $item[$title] }}">--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
                                             <div class="infor">
                                                 <h3 class="title" style="min-height: 20px;">
                                                     <a href="{{ route('duan', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
