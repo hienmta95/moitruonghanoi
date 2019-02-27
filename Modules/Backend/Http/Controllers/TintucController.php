@@ -30,7 +30,7 @@ class tintucController extends Controller
                 return "<img class='index-images' src='".asset('/') .$url."' alt=''>";
             })
             ->editColumn('tomtat',function ($row){
-                return "<p>". substr($row->noidung, 0, 100) ."</p>";
+                return "<p>". mb_convert_encoding(substr($row->noidung, 0, 100), 'UTF-8', 'UTF-8')."</p>";
             })
             ->addColumn('action', function($row) {
                 return

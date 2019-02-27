@@ -40,7 +40,7 @@
                     <section class="prd-detail">
                         <section class="panel-body">
                             <div class="prd-contents">
-                                <div class="label"><span>{{ __('Thông tin về') }} {{ $sanpham[$title] }}</span></div>
+                                <div class="label"><span>{{ $sanpham[$title] }}</span></div>
                                 <div class="content detail-content">
                                     {{--<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 14px; text-align: center;">--}}
                                         {{--<img alt="" class="img-thumbnail" src="{{ $sanpham['image']['url'] }}" style="box-sizing: border-box; border: 1px solid rgb(221, 221, 221); vertical-align: middle; display: inline-block; max-width: 100%; height: 200px; padding: 4px; line-height: 1.42857; border-radius: 0px; transition: all 0.2s ease-in-out; font-family: Arial, sans-serif; width: 273.719px; object-fit: scale-down;">--}}
