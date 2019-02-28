@@ -299,7 +299,7 @@
 
                     <div class="footer-statistical">
                         <div class="main-title"><span>{{ __('Thống kê truy cập') }}</span></div>
-                        <div class="value">{{ __('Tổng truy cập') }}: {{ $info['count'] }} {{ __('lượt') }}</div>
+                        <div class="value">Online: <?php echo array_rand(['12','13','14','15','16','17','9','23','22','20','21','24','25','26','27','28'], 1)?> - {{ __('Tổng truy cập') }}: {{ $info['count'] }} {{ __('lượt') }}</div>
                     </div>
                 </div>
             </div><!-- .uk-grid -->
