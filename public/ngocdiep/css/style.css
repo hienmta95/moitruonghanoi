@@ -379,7 +379,7 @@
 		display: block;
 		position: absolute;
 		width: 86px;
-		height: 100px;
+		height: auto;
 		left: 22px;
 		top: 50%;
 		-webkit-transform: translate(0, -50%);
@@ -2128,7 +2128,7 @@
         height: 130px;
     }
     .homepage-category .box {
-        padding-left: 70px;
+        padding-left: 120px;
     }
 }
 
