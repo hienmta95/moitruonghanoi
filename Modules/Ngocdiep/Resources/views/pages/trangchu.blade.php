@@ -17,7 +17,7 @@
             <div class="uk-container uk-container-center">
                 <div class="uk-slidenav-position slider" data-uk-slider="{autoplay: true, autoplayInterval: 10500}">
                     <div class="uk-slider-container">
-                        <ul style="margin-top: 20px;" class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">
+                        <ul class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">
 
                             @foreach($section as $key=>$items)
                                 @if($key == 1)
