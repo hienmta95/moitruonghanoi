@@ -24,7 +24,7 @@
     <meta name="rating" content="general">
 
     <!-- for Facebook -->
-    <meta property="og:title" content="Môi trường Hà Nội - Tự hào là thương hiệu quốc gia" />
+    <meta property="og:title" content="Môi trường Hà Nội" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{{ route('trangchu') }}" />
     <meta property="og:description" content="" />
@@ -34,7 +34,7 @@
 
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Môi trường Hà Nội - Tự hào là thương hiệu quốc gia" />
+    <meta name="twitter:title" content="Môi trường Hà Nội" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="{{ route('trangchu') }}" />
 
@@ -101,15 +101,15 @@
                         <img style="max-width: 75px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
                     </a>
                     <div class="logo-brand" style="display: inline-block;
-    max-width: 190px;
+    max-width: 234px;
     vertical-align: middle;
     margin-left: 10px;
     min-width: 161px;
     margin-top: 10px;">
-                        <h4 style="font-size: 11px;
+                        <h4 style="font-size: 12px;
     line-height: 16px;
     color: #56884c;
-    font-weight: 700;">{{ $info['tencongty'] }}</h4>
+    font-weight: 700;">{{ $info[$tencongty] }}</h4>
                     </div>
                 </div>
                 <nav class="main-navs">
@@ -208,14 +208,14 @@
                 <img style="width: 80px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
             </a>
             <div class="logo-brand" style="display: inline-block;
-    max-width: 161px;
+    max-width: 198px;
     vertical-align: middle;
     margin-left: 5px;
     min-width: 161px;">
                 <h4 style="font-size: 10px;
     line-height: 16px;
     color: #56884c;
-    font-weight: 700;">{{ $info['tencongty'] }}</h4>
+    font-weight: 700;">{{ $info[$tencongty] }}</h4>
             </div>
         </div>
 
@@ -276,7 +276,7 @@
                     <div class="footer-company">
                         <div class="main-title">
                             <a href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
-                                {{ $info['tencongty'] }}                           </a>
+                                {{ $info[$tencongty] }}                           </a>
                         </div>
                         <p><strong>Address:</strong><br />
                             {{ $info['truso'] }}<br />

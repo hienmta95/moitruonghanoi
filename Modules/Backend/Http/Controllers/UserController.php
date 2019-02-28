@@ -32,6 +32,7 @@ class UserController extends Controller
         $request->validate([
             'tel1' => 'required',
             'tencongty' => 'required',
+            'tencongty_en' => 'required',
             'emailcongty' => 'required',
             'truso' => 'required'
         ]);
@@ -40,6 +41,7 @@ class UserController extends Controller
             'tel2' => $request->tel2,
             'truso' => $request->truso,
             'tencongty' => $request->tencongty,
+            'tencongty_en' => $request->tencongty_en,
             'emailcongty' => $request->emailcongty,
             'emailcongty2' => $request->emailcongty2,
             'facebook' => $request->facebook,

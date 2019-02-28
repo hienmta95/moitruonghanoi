@@ -39,7 +39,7 @@
                         <div class="uk-width-large-1-3 uk-width-xlarge-3-4">
                             <div class="contact-infomation">
                                 <div class="note">{{ __('Cám ơn quý khách đã ghé thăm website chúng tôi..') }}</div>
-                                <h2 class="company">CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI</h2>
+                                <h2 class="company">{{ $info[$tencongty] }}</h2>
                                 <div class="address">
                                 </div>
                                 <div class="contact-map">
@@ -59,23 +59,23 @@
                                     @csrf
                                     <div class="uk-grid lib-grid-20 uk-grid-width-small-1-2 uk-grid-width-large-1-1">
                                         <div class="form-row">
-                                            <input type="text" name="hoten" value="" class="uk-width-1-1 input-text" placeholder="Họ và tên *">
+                                            <input type="text" name="hoten" value="" class="uk-width-1-1 input-text" placeholder="{{ __('Họ và tên') }} *">
                                         </div>
                                         <div class="form-row">
                                             <input type="text" name="email" value="" class="uk-width-1-1 input-text" placeholder="Email *">
                                         </div>
                                         <div class="form-row">
-                                            <input type="text" name="sdt" value="" class="uk-width-1-1 input-text" placeholder="Số điện thoại *">
+                                            <input type="text" name="sdt" value="" class="uk-width-1-1 input-text" placeholder="{{ __('Số điện thoại') }} *">
                                         </div>
                                         <div class="form-row">
-                                            <input type="text" name="diachi" value="" class="uk-width-1-1 input-text" placeholder="Địa chỉ *">
+                                            <input type="text" name="diachi" value="" class="uk-width-1-1 input-text" placeholder="{{ __('Địa chỉ') }} *">
                                         </div>
                                     </div><!-- end .uk-grid -->
                                     <div class="form-row">
-                                        <textarea name="noidung" value="" class="uk-width-1-1 form-textarea" style="height: 175px;" placeholder="Nội dung *"></textarea>
+                                        <textarea name="noidung" value="" class="uk-width-1-1 form-textarea" style="height: 175px;" placeholder="{{ __('Nội dung') }} *"></textarea>
                                     </div>
                                     <div class="form-row uk-text-right">
-                                        <input type="submit" name="create" class="btn-submit" value="Gửi thông tin">
+                                        <input type="submit" name="create" class="btn-submit" value="{{ __('Gửi thông tin') }}">
                                     </div>
                                 </form><!-- end .form -->
                             </div><!-- end .contacts -->

@@ -21,6 +21,12 @@ Update thông tin
                 <div class="help-block">@if($errors->has('tencongty')) {{ $errors->first('tencongty') }} @endif</div>
             </div>
 
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['tencongty_en']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Tên công ty - English<span class="required">*</span></label>
+                <input class="form-control{{ $errors->has('tencongty_en') ? ' has-error' : '' }}" name="tencongty_en" type="text" value="{{ $info->tencongty_en }}">
+                <div class="help-block">@if($errors->has('tencongty_en')) {{ $errors->first('tencongty_en') }} @endif</div>
+            </div>
+
             <div class="form-group  @if (count($errors->all())) {{$errors->has(['emailcongty']) ? 'has-error' : 'has-success'}} @endif">
                 <label class="control-label">Email công ty<span class="required">*</span></label>
                 <input class="form-control{{ $errors->has('emailcongty') ? ' has-error' : '' }}" name="emailcongty" type="text" value="{{ $info->emailcongty }}">

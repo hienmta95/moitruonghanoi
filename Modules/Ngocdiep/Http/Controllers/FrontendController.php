@@ -32,11 +32,13 @@ class FrontendController extends Controller
             $noidung = 'noidung_en';
             $description = 'description_en';
             $gioithieu = 'gioithieu_en';
+            $tencongty = 'tencongty_en';
         } elseif ($this->lang == 'vi') {
             $title = 'title';
             $noidung = 'noidung';
             $description = 'description';
             $gioithieu = 'gioithieu';
+            $tencongty = 'tencongty';
         }
 
         $slide = Slide::with(['image'])
@@ -77,6 +79,7 @@ class FrontendController extends Controller
         view()->share('gioithieu', $gioithieu);
         view()->share('info', $info);
         view()->share('section', $section);
+        view()->share('tencongty', $tencongty);
     }
 
     public function homepage(Request $request)
