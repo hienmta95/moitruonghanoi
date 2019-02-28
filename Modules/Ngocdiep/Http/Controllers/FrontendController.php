@@ -56,6 +56,16 @@ class FrontendController extends Controller
         $info = User::where('id', '1')->first()->toArray();
         $this->info = $info;
 
+        $section = [];
+        $sections = Section::with('image')->get();
+        foreach($sections as $key=>$item) {
+            $section[$item->position][$key]['title'] = $item->title;
+            $section[$item->position][$key]['title_en'] = $item->title_en;
+            $section[$item->position][$key]['video'] = $item->video;
+            $section[$item->position][$key]['link'] = $item->link;
+            $section[$item->position][$key]['image'] = asset('/') . $item->image->url;
+        }
+
         view()->share('slide', $slide);
         view()->share('loaicongnghe', $loaicongnghe);
         view()->share('loaiduan', $loaiduan);
@@ -66,6 +76,7 @@ class FrontendController extends Controller
         view()->share('description', $description);
         view()->share('gioithieu', $gioithieu);
         view()->share('info', $info);
+        view()->share('section', $section);
     }
 
     public function homepage(Request $request)
@@ -74,18 +85,10 @@ class FrontendController extends Controller
             ->orderBy('id', 'desc')
             ->limit(10)
             ->get()->toArray();
-        $section = [];
-        $sections = Section::with('image')->get();
-        foreach($sections as $key=>$item) {
-            $section[$item->position][$key]['title'] = $item->title;
-            $section[$item->position][$key]['title_en'] = $item->title_en;
-            $section[$item->position][$key]['video'] = $item->video;
-            $section[$item->position][$key]['link'] = $item->link;
-            $section[$item->position][$key]['image'] = asset('/') . $item->image->url;
-        }
+
         $count = $this->updateCount();
 
-        return view('ngocdiep::pages.trangchu', compact('duans', 'section', 'count'));
+        return view('ngocdiep::pages.trangchu', compact('duans', 'count'));
     }
 
     public function updateCount()

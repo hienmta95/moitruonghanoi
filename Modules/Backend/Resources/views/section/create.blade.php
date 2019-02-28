@@ -3,6 +3,7 @@
     @if($position == '1') Tạo mới phần 4 hình ảnh đầu tiên ở trang chủ
     @elseif($position == '2') Tạo mới phần 4 hình ảnh thứ hai ở trang chủ
     @elseif($position == '3') Tạo mới phần video ở trang chủ
+    @elseif($position == '4') Tạo mới phần logo scroll
     @endif
 @endsection
 @section('breadcrumb')
@@ -12,6 +13,7 @@
     <li class="active">@if($position == '1') Tạo mới phần 4 hình ảnh đầu tiên ở trang chủ
         @elseif($position == '2') Tạo mới phần 4 hình ảnh thứ hai ở trang chủ
         @elseif($position == '3') Tạo mới phần video ở trang chủ
+        @elseif($position == '4') Tạo mới phần logo scroll
         @endif</li>
 </ul>
 @endsection

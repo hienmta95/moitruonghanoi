@@ -239,6 +239,35 @@
 
 @yield('content')
 
+
+<section class="homepage-category logo-scroll" style="margin-bottom: 0px;">
+    <div class="uk-container uk-container-center">
+        <div class="uk-slidenav-position slider" data-uk-slider="{autoplay: true, autoplayInterval: 5500}">
+            <div class="uk-slider-container">
+                <ul class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">
+
+                    @foreach($section as $key=>$items)
+                        @if($key == 4)
+                            $@foreach($items as $key2=>$item)
+                                <li>
+                                    <a class="box" href="{{ $item['link'] }}"
+                                       title="{{ $item[$title] }}" target="_blank">
+                                        <span class="icon">
+                                            <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
+                                        </span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
+                    @endforeach
+
+                </ul>
+            </div>
+        </div>
+        <!-- .slider -->
+    </div>
+</section><!-- .homepage-category -->
+
 <footer class="footer" style="color: #fff">
     <section class="upper">
         <div class="uk-container uk-container-center">

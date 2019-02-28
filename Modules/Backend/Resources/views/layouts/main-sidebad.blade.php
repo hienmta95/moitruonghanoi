@@ -180,6 +180,7 @@ if (! function_exists('active_route')) {
                 <li class=""><a href="{{ route('backend.section.index', '1') }}">» Phần 4 hình ảnh đầu tiên</a></li>
                 <li class=""><a href="{{ route('backend.section.index', '2') }}">» Phần 4 hình ảnh thứ hai</a></li>
                 <li class=""><a href="{{ route('backend.section.index', '3') }}">» Phần Videos </a></li>
+                <li class=""><a href="{{ route('backend.section.index', '4') }}">» Phần Logos Scroll </a></li>
                 <li class=""><a href="{{ route('backend.thongtin.update') }}">» Phần thông tin Footer </a></li>
             </ul>
         </li>

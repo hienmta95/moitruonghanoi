@@ -2150,3 +2150,25 @@
     top: 0;
     display: none;
 }
+
+.logo-scroll.homepage-category .box {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.logo-scroll.homepage-category .icon {
+    left: auto;
+    width: 100%;
+}
+
+.logo-scroll.homepage-category .box img {
+    max-height: 100px;
+}
+
+#homepage.page-body {
+    margin-bottom: 0px;
+}
+
+.page-body {
+    margin-bottom: 25px;
+}
