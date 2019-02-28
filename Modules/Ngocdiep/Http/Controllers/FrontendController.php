@@ -39,7 +39,10 @@ class FrontendController extends Controller
             $gioithieu = 'gioithieu';
         }
 
-        $slide = Slide::with(['image'])->orderBy('id', 'desc')->get()->toArray();
+        $slide = Slide::with(['image'])
+            ->where('active', '!=', '0')
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
         $loaicongnghe = Loaicongnghe::with(['image', 'congnghe' => function($q) {
             return $q->with(['image'])->orderBy('id', 'desc');
         }])->orderBy('id', 'desc')->get()->toArray();
