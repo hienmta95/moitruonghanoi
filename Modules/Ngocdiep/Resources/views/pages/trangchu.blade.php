@@ -21,7 +21,7 @@
 
                             @foreach($section as $key=>$items)
                                 @if($key == 1)
-                                    $@foreach($items as $key2=>$item)
+                                    @foreach($items as $key2=>$item)
                                         <li>
                                             <a class="box" href="{{ $item['link'] }}"
                                                title="{{ $item[$title] }}" target="_blank">
@@ -186,7 +186,7 @@
                                     <div class="fotorama" data-nav="thumbs">
                                         @foreach($section as $key=>$items)
                                             @if($key == 3)
-                                                $@foreach($items as $key2=>$item)
+                                                @foreach($items as $key2=>$item)
                                                     <a
                                                         href="{{ $item['video'] }}"
                                                         data-img="{{ $item['image'] }}">
