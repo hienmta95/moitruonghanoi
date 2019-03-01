@@ -56,6 +56,15 @@ Tạo mới sản phẩm
                 <div class="help-block">@if($errors->has('catalogs')) {{ $errors->first('catalogs') }} @endif</div>
             </div>
 
+            <div class="form-group @if (count($errors->all())) {{$errors->has(['active_catalogs']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Hiển thị catalogs hay không <span class="required">*</span></label>
+                <div>
+                    <label class="radio-inline"><input type="radio" name="active_catalogs" value="1" @if(old('active_catalogs') == 1) {!! 'checked'!!} @endif ><strong>Có</strong></label>
+                    <label class="radio-inline"><input type="radio" name="active_catalogs" value="0" @if(old('active_catalogs') == 0) {!! 'checked'!!} @endif ><strong>Không</strong></label>
+                </div>
+                <div class="help-block">@if($errors->has('active_catalogs')) {{ $errors->first('active_catalogs') }} @endif</div>
+            </div>
+
             <div class="form-group @if (count($errors->all())) {{$errors->has(['noidung']) ? 'has-error' : 'has-success'}} @endif">
                 <label class="control-label">Nội dung<span class="required">*</span></label>
                 <textarea id="noidung" class="form-control{{ $errors->has('noidung') ? ' has-error' : '' }}" name="noidung" maxlength="255" rows="3">{{ old('noidung') }}</textarea>

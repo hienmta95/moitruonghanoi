@@ -186,6 +186,7 @@ class SanphamController extends Controller
             $sanpham->loaisanpham_id = $request->loaisanpham_id;
             $sanpham->noidung = $request->noidung;
             $sanpham->noidung_en = $request->noidung_en;
+            $sanpham->active_catalogs = $request->active_catalogs;
             $sanpham->image_id = $image_id;
             $sanpham->description = $request->description;
             $sanpham->description_en = $request->description_en;

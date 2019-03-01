@@ -51,7 +51,7 @@
                                 <h1 class="main-title"><span>Catalogs</span></h1>
                                 <div class="content">
                                     <ul class="sitemap">
-                                        @foreach($data as $item)
+                                        @foreach($data_log as $item)
                                             <li>
                                                 <a href="{{ route('sanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
                                                     {{ $item['title'] }}</a>

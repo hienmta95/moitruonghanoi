@@ -263,10 +263,12 @@ class FrontendController extends Controller
 
     public function getCatalogs(Request $request) {
 
-        $data = Sanpham::where('catalogs', '!=', '')
-            ->orderBy('id', 'desc')->get()->toArray();
+        $data_log = Sanpham::where('catalogs', '!=', '')
+            ->where('active_catalogs', '1')
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
 
-        return view('ngocdiep::pages.catalogs', compact('data'));
+        return view('ngocdiep::pages.catalogs', compact('data_log'));
     }
 
 }

@@ -48,7 +48,7 @@
 
                                     {!! $sanpham[$noidung] !!}
 
-                                    @if($sanpham['catalogs'])
+                                    @if($sanpham['catalogs'] && $sanpham['active_catalogs'] == '1')
                                     <div style="margin-top: 30px;">
                                         <i style="font-size: 15px;" >
                                             Catalogs: <a href="{{ asset('/backend/upload/catalogs/') .'/'. $sanpham['catalogs'] }}" target="_blank">{{ $sanpham['catalogs'] }}</a>

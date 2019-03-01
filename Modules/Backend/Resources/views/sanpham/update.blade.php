@@ -60,9 +60,18 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label">catalogs</label>
+                <label class="control-label">Catalogs</label>
                 <p>{{$sanpham->catalogs}}</p>
                 <input type="file" class="form-control" name="catalogs" value="{{$sanpham->catalogs}}">
+            </div>
+
+            <div class="form-group @if (count($errors->all())) {{$errors->has(['active_catalogs']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Hiển thị Catalogs hay không <span class="required">*</span></label>
+                <div>
+                    <label class="radio-inline"><input type="radio" name="active_catalogs" value="1" required @if($sanpham->active_catalogs == 1) {{ "checked" }} @endif><strong>Có</strong></label>
+                    <label class="radio-inline"><input type="radio" name="active_catalogs" value="0" required @if($sanpham->active_catalogs == 0) {{ "checked" }} @endif><strong>Không</strong></label>
+                </div>
+                <div class="help-block">@if($errors->has('active_catalogs')) {{ $errors->first('active_catalogs') }} @endif</div>
             </div>
 
             <div class="form-group @if (count($errors->all())) {{$errors->has(['noidung']) ? 'has-error' : 'has-success'}} @endif">
