@@ -59,6 +59,12 @@
                 <div class="help-block">@if($errors->has('image')) {{ $errors->first('image') }} @endif</div>
             </div>
 
+            <div class="form-group">
+                <label class="control-label">catalogs</label>
+                <p>{{$sanpham->catalogs}}</p>
+                <input type="file" class="form-control" name="catalogs" value="{{$sanpham->catalogs}}">
+            </div>
+
             <div class="form-group @if (count($errors->all())) {{$errors->has(['noidung']) ? 'has-error' : 'has-success'}} @endif">
                 <label class="control-label">Nội dung<span class="required">*</span></label>
                 <textarea id="noidung_sanpham" class="form-control{{ $errors->has('noidung') ? ' has-error' : '' }}" name="noidung" maxlength="255" rows="3">{{ $sanpham->noidung }}</textarea>

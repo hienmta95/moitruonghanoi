@@ -84,8 +84,29 @@ class SanphamController extends Controller
             $image_id = $imageFile->saveImage($file);
         }
 
+        if($request->hasFile('catalogs'))
+        {
+            $file = $request->file('catalogs');
+
+            $duoi = $file->getClientOriginalExtension();
+
+
+            $name = $file->getClientOriginalName();
+            $catalogs = str_random(3)."__".$name;
+            while(file_exists("backend/upload/catalogs/".$catalogs));
+            {
+                $catalogs = str_random(3)."__".$name;
+            }
+            $file->move("backend/upload/catalogs",$catalogs);
+            $catalogs_text = $catalogs;
+        }
+        else
+        {
+            $catalogs_text = '';
+        }
+
         $req = $request->all();
-        $sanpham = $image_id != 0 ? Sanpham::create(array_merge($req, ['image_id' => $image_id])) : Sanpham::create($req);
+        $sanpham = $image_id != 0 ? Sanpham::create(array_merge($req, ['image_id' => $image_id], ['catalogs' => $catalogs_text])) : Sanpham::create($req);
 
         return redirect()->route('backend.sanpham.show', $sanpham->id);
     }
@@ -142,6 +163,23 @@ class SanphamController extends Controller
             } else {
                 $image_id = $request->image_old;
             }
+
+            if($request->hasFile('catalogs'))
+            {
+                $file = $request->file('catalogs');
+                $duoi = $file->getClientOriginalExtension();
+
+
+                $name = $file->getClientOriginalName();
+                $catalogs = str_random(3)."__".$name;
+                while (file_exists("backend/upload/catalogs/".$catalogs)) {
+                    $catalogs = str_random(3)."__".$name;
+                }
+                $file->move("backend/upload/catalogs",$catalogs);
+                //unlink("upload/catalogs/".$sukien->catalogs);
+                $sanpham->catalogs = $catalogs;
+            }
+
             $sanpham->title = $request->title;
             $sanpham->title_en = $request->title_en;
             $sanpham->slug = $request->slug;

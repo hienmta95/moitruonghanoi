@@ -69,19 +69,19 @@
             <div class="uk-flex uk-flex-middle uk-flex-right container">
                 <ul class="uk-list uk-clearfix site-link" style="margin: 0px">
                     <li>
-                        <a href="{{ route('gioithieu') }}" title="Về chúng tôi">
+                        <a href="{{ route('sitemap') }}" title="{{ __('Sơ đồ trang') }}">
 									<span class="icon">
 										<img src="{{ asset('/ngocdiep/img/icon_1.png') }}" alt="icon-menu-top" />
 									</span>
-                            <span class="label" style="font-size: 100%;">{{ __('Về chúng tôi') }}</span>
+                            <span class="label" style="font-size: 100%;">{{ __('Sơ đồ trang') }}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('tintuc.list') }}" title="Thư viện">
+                        <a href="{{ route('catalogs') }}" title="Catalogs">
 									<span class="icon">
 										<img src="{{ asset('/ngocdiep/img/icon_2.png') }}" alt="icon-menu-top" />
 									</span>
-                            <span class="label" style="font-size: 100%">{{ __('Thông báo') }}</span>
+                            <span class="label" style="font-size: 100%">Catalogs</span>
                         </a>
                     </li>
                 </ul>
@@ -96,7 +96,7 @@
     <section class="upper">
         <div class="uk-container uk-container-center">
             <div class="uk-flex uk-flex-middle uk-flex-space-between container">
-                <div class="logo">
+                <div class="logo" style="min-width: 320px;">
                     <a style="float: left" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
                         <img style="max-width: 75px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
                     </a>

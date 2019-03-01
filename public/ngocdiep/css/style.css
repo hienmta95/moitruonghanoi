@@ -2172,3 +2172,49 @@
 .page-body {
     margin-bottom: 25px;
 }
+
+.footer .footer-social ul a {
+    background-color: #fff;
+    height: 30px;
+    width: 30px;
+}
+
+.footer .footer-social ul a:hover {
+    background-color: #0095c7;
+    color: #fff;
+}
+
+.footer .footer-social ul a .fa {
+    font-size: 15px;
+    line-height: 31px;
+}
+
+.sitemap {
+    font-size: 15px;
+    color: #6eac57;
+    line-height: 25px;
+    padding: 10px 20px;
+}
+
+.sitemap > li {
+
+}
+
+.sitemap > li a {
+    color: #6eac57;
+
+}
+
+.sitemap > li a:hover {
+    margin-left: 10px;
+    transition: 1s;
+
+}
+
+.sitemap .sub_menus > li {
+    margin-left: 20px;
+}
+
+.sitemap .sub_menus > li a {
+
+}

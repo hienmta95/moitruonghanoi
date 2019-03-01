@@ -255,4 +255,18 @@ class FrontendController extends Controller
         $user->notify(new ToAdmin($data));
     }
 
+    public function getSitemap(Request $request)
+    {
+        $data = '';
+        return view('ngocdiep::pages.sitemap', compact('data'));
+    }
+
+    public function getCatalogs(Request $request) {
+
+        $data = Sanpham::where('catalogs', '!=', '')
+            ->orderBy('id', 'desc')->get()->toArray();
+
+        return view('ngocdiep::pages.catalogs', compact('data'));
+    }
+
 }

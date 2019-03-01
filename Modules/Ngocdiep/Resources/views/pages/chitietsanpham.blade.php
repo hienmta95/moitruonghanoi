@@ -48,6 +48,13 @@
 
                                     {!! $sanpham[$noidung] !!}
 
+                                    @if($sanpham['catalogs'])
+                                    <div style="margin-top: 30px;">
+                                        <i style="font-size: 15px;" >
+                                            Catalogs: <a href="{{ asset('/backend/upload/catalogs/') .'/'. $sanpham['catalogs'] }}" target="_blank">{{ $sanpham['catalogs'] }}</a>
+                                        </i>
+                                    </div>
+                                    @endif
                                     <div>
                                         <i style="font-size: 13px; float: right">
                                             {{ date_format(date_create($sanpham['updated_at']),"d-m-Y") }}</i>
