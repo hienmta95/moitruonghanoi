@@ -2145,7 +2145,7 @@
     background-color: #598e56a1;
     position: absolute;
     top: 0;
-    display: block;
+    display: none;
 }
 
 .logo-scroll.homepage-category .box {
