@@ -42,7 +42,7 @@
     font-size: 25px;
     text-align: center;
     background: #eee;">{{ __('Liên hệ của bạn đã được gửi đi, chúng tôi sẽ liên hệ lại với bạn trong thời gian gần nhất.') }}</div>
-                                <h2 class="company">CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI</h2>
+                                <h2 class="company">{{ $info[$tencongty] }}</h2>
                                 <div class="address">
                                     {{ $info['truso'] }}
                                 </div>

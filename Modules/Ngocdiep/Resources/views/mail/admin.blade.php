@@ -2,7 +2,7 @@
     {{-- Header --}}
     @slot('header')
         @component('mail::header', ['url' => config('app.url')])
-            Liên hệ môi trường Hà Nôi
+            Liên hệ môi trường Hà Nội
         @endcomponent
     @endslot
     {{-- Body --}}
