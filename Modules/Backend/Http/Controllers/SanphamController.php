@@ -84,29 +84,34 @@ class SanphamController extends Controller
             $image_id = $imageFile->saveImage($file);
         }
 
-        if($request->hasFile('catalogs'))
-        {
-            $file = $request->file('catalogs');
+        $catas = [];
+        for($i = 1; $i <= 10; $i++) {
+            $cata = 'catalogs' . $i;
+            $active = 'active' . $i;
 
-            $duoi = $file->getClientOriginalExtension();
-
-
-            $name = $file->getClientOriginalName();
-            $catalogs = str_random(3)."__".$name;
-            while(file_exists("backend/upload/catalogs/".$catalogs));
+            if($request->hasFile($cata))
             {
-                $catalogs = str_random(3)."__".$name;
+                $file = $request->file($cata);
+
+                $name = $file->getClientOriginalName();
+                $catalogues = str_random(4)."__".$name;
+                while(file_exists("backend/upload/catalogs/". $catalogues));
+                {
+                    $catalogues = str_random(4)."__".$name;
+                }
+                $file->move("backend/upload/catalogs/", $catalogues);
+                $catas[$cata] = $catalogues;
             }
-            $file->move("backend/upload/catalogs",$catalogs);
-            $catalogs_text = $catalogs;
-        }
-        else
-        {
-            $catalogs_text = '';
+            else
+            {
+                $catas[$cata] = '';
+            }
+
+            $catas[$active] =  $request->$active;;
         }
 
         $req = $request->all();
-        $sanpham = $image_id != 0 ? Sanpham::create(array_merge($req, ['image_id' => $image_id], ['catalogs' => $catalogs_text])) : Sanpham::create($req);
+        $sanpham = $image_id != 0 ? Sanpham::create(array_merge($req, ['image_id' => $image_id], $catas)) : Sanpham::create($req);
 
         return redirect()->route('backend.sanpham.show', $sanpham->id);
     }
@@ -153,6 +158,7 @@ class SanphamController extends Controller
             'noidung' => 'required',
             'noidung_en' => 'required',
         ]);
+//        dd($request->all());
         $sanpham = Sanpham::find($id);
 
         if($sanpham) {
@@ -164,20 +170,24 @@ class SanphamController extends Controller
                 $image_id = $request->image_old;
             }
 
-            if($request->hasFile('catalogs'))
-            {
-                $file = $request->file('catalogs');
-                $duoi = $file->getClientOriginalExtension();
+            for($i = 1; $i <= 10; $i++) {
+                $cata = 'catalogs'.$i;
+                $active = 'active'.$i;
 
-
-                $name = $file->getClientOriginalName();
-                $catalogs = str_random(3)."__".$name;
-                while (file_exists("backend/upload/catalogs/".$catalogs)) {
-                    $catalogs = str_random(3)."__".$name;
+                if($request->hasFile($cata))
+                {
+                    $file = $request->file($cata);
+                    $name = $file->getClientOriginalName();
+                    $catalogs = str_random(4) . '__' . $name;
+                    while (file_exists("backend/upload/catalogs/".$catalogs)) {
+                        $catalogs = str_random(4) . '__' . $name;
+                    }
+                    $file->move("backend/upload/catalogs",$catalogs);
+                    //unlink("upload/catalogs/".$sukien->catalogs);
+                    $sanpham->$cata = $catalogs;
                 }
-                $file->move("backend/upload/catalogs",$catalogs);
-                //unlink("upload/catalogs/".$sukien->catalogs);
-                $sanpham->catalogs = $catalogs;
+                $sanpham->$active = $request->$active;
+
             }
 
             $sanpham->title = $request->title;
@@ -186,7 +196,6 @@ class SanphamController extends Controller
             $sanpham->loaisanpham_id = $request->loaisanpham_id;
             $sanpham->noidung = $request->noidung;
             $sanpham->noidung_en = $request->noidung_en;
-            $sanpham->active_catalogs = $request->active_catalogs;
             $sanpham->image_id = $image_id;
             $sanpham->description = $request->description;
             $sanpham->description_en = $request->description_en;

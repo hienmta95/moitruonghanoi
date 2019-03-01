@@ -52,11 +52,23 @@
                                 <div class="content">
                                     <ul class="sitemap">
                                         @foreach($data_log as $item)
-                                            <li>
+                                            <li style="margin-top: 10px">
                                                 <a href="{{ route('sanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item['title'] }}">
                                                     {{ $item['title'] }}</a>
-                                                <span style="padding: 0 20px;">-</span> {{ $item['catalogs'] }}
-                                                (<a style="color: #2F33AB" href="{{ asset('backend/upload/catalogs') .'/'. $item['catalogs'] }}" target="_blank">Download</a>)
+                                                {{--<span style="padding: 0 20px;">-</span> {{ $item['catalogs'] }}--}}
+                                                {{--(<a style="color: #2F33AB" href="{{ asset('backend/upload/catalogs') .'/'. $item['catalogs'] }}" target="_blank">Download</a>)--}}
+                                                <ul class="sub_menus">
+                                                        <?php for($i =1; $i <=10; $i++)  {
+                                                        $cata = "catalogs".$i;
+                                                        $active = "active".$i;
+                                                        ?>
+                                                        @if(!empty($item[$cata]) && $item[$active] == '1')
+                                                                <li>
+                                                                    <a href="{{ asset('/backend/upload/catalogs/') .'/'. $item[$cata] }}" target="_blank">{{ $item[$cata] }}</a>
+                                                                </li>
+                                                        @endif
+                                                        <?php } ?>
+                                                </ul>
                                             </li>
                                         @endforeach
 

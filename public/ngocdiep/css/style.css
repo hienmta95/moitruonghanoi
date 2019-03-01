@@ -2124,9 +2124,6 @@
 
 @media (max-width: 800px) {
 
-    .img-hover.img-cover::after {
-        height: 130px;
-    }
     .homepage-category .box {
         padding-left: 120px;
     }
@@ -2140,7 +2137,7 @@
     content: '';
     width: 100%;
     transition: 1s;
-    height: 185px;
+    height: 100%;
     background-image: url(img/entech.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -2148,7 +2145,7 @@
     background-color: #598e56a1;
     position: absolute;
     top: 0;
-    display: none;
+    display: block;
 }
 
 .logo-scroll.homepage-category .box {
@@ -2217,4 +2214,17 @@
 
 .sitemap .sub_menus > li a {
 
+}
+
+.logo-vi {
+    max-width: 210px !important;
+}
+
+.logo-vi-sp {
+    max-width: 175px !important;
+}
+
+.logo-en-sp {
+    max-width: 140px !important;
+    min-width: 140px !important;
 }

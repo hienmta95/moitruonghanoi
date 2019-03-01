@@ -50,21 +50,6 @@ Tạo mới sản phẩm
                 <div class="help-block">@if($errors->has('image')) {{ $errors->first('image') }} @endif</div>
             </div>
 
-            <div class="form-group @if (count($errors->all())) {{$errors->has(['catalogs']) ? 'has-error' : 'has-success'}} @endif">
-                <label class="control-label">Catalogs</label>
-                <input name="catalogs" type="file">
-                <div class="help-block">@if($errors->has('catalogs')) {{ $errors->first('catalogs') }} @endif</div>
-            </div>
-
-            <div class="form-group @if (count($errors->all())) {{$errors->has(['active_catalogs']) ? 'has-error' : 'has-success'}} @endif">
-                <label class="control-label">Hiển thị catalogs hay không <span class="required">*</span></label>
-                <div>
-                    <label class="radio-inline"><input type="radio" name="active_catalogs" value="1" @if(old('active_catalogs') == 1) {!! 'checked'!!} @endif ><strong>Có</strong></label>
-                    <label class="radio-inline"><input type="radio" name="active_catalogs" value="0" @if(old('active_catalogs') == 0) {!! 'checked'!!} @endif ><strong>Không</strong></label>
-                </div>
-                <div class="help-block">@if($errors->has('active_catalogs')) {{ $errors->first('active_catalogs') }} @endif</div>
-            </div>
-
             <div class="form-group @if (count($errors->all())) {{$errors->has(['noidung']) ? 'has-error' : 'has-success'}} @endif">
                 <label class="control-label">Nội dung<span class="required">*</span></label>
                 <textarea id="noidung" class="form-control{{ $errors->has('noidung') ? ' has-error' : '' }}" name="noidung" maxlength="255" rows="3">{{ old('noidung') }}</textarea>
@@ -132,6 +117,34 @@ Tạo mới sản phẩm
                 </script>
                 <div class="help-block">@if($errors->has('description_en')) {{ $errors->first('description_en') }} @endif</div>
             </div>
+
+            <?php
+                for($i = 1; $i <=10; $i++) {
+                    $cata = 'catalogs'.$i;
+                    $active = 'active'.$i;
+            ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group @if (count($errors->all())) {{$errors->has([$cata]) ? 'has-error' : 'has-success'}} @endif">
+                            <label class="control-label">Catalogs {{ $i }}</label>
+                            <input name="{{ $cata }}" type="file">
+                            <div class="help-block">@if($errors->has($cata)) {{ $errors->first($cata) }} @endif</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group @if (count($errors->all())) {{$errors->has(['']) ? 'has-error' : 'has-success'}} @endif">
+                            <label class="control-label">Hiển thị catalogs {{ $i }} hay không? <span class="required">*</span></label>
+                            <div>
+                                <label class="radio-inline"><input type="radio" name="{{ $active }}" value="1" @if(old($active) == 1) {!! 'checked'!!} @endif ><strong>Có</strong></label>
+                                <label class="radio-inline"><input type="radio" name="{{ $active }}" value="0" @if(old($active) == 0) {!! 'checked'!!} @endif ><strong>Không</strong></label>
+                            </div>
+                            <div class="help-block">@if($errors->has($active)) {{ $errors->first($active) }} @endif</div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php } ?>
+
 
             <br>
             <div class="form-group">

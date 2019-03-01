@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sanpham extends Model
 {
     protected $fillable = [
-        'id', 'title', 'created_at', 'updated_at', 'description', 'image_id', 'slug', 'noidung', 'loaisanpham_id', 'title_en', 'description_en', 'noidung_en', 'catalogs', 'active_catalogs'
+        'id', 'title', 'created_at', 'updated_at', 'description', 'image_id', 'slug', 'noidung', 'loaisanpham_id', 'title_en', 'description_en', 'noidung_en', 'catalogs1', 'active1', 'catalogs2', 'active2', 'catalogs3', 'active3', 'catalogs4', 'active4', 'catalogs5', 'active5', 'catalogs6', 'active6', 'catalogs7', 'active7', 'catalogs8', 'active8', 'catalogs9', 'active9', 'catalogs10', 'active10'
     ];
 
     protected $hidden = [

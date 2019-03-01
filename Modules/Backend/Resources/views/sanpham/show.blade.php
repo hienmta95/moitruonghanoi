@@ -32,7 +32,16 @@
             <tr><th>Ngày tạo</th><td><p class="c_timezone">{{ $sanpham->created_at }}</p></td></tr>
             <tr><th>Ngày sửa</th><td><p class="c_timezone">{{ $sanpham->updated_at }}</p></td></tr>
             <tr><th>Hình ảnh</th><td>{!! $sanpham->image ? "<img  class='show-images' src='".asset('/').$sanpham->image->url."' alt=''>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>
-            <tr><th>Catalogs</th><td>{!! $sanpham->catalogs ? "<a  class='show-images' href='".asset('/backend/upload/catalogs'). '/'.$sanpham->catalogs."' target='_blank'> ". $sanpham->catalogs."</a>" : "<span class='not-set'>(not set)</span>"!!}</td></tr>
+            <?php
+                for($i = 1; $i <=10; $i++) {
+                    $cata = 'catalogs'.$i;
+                    $active = 'active'.$i;
+            ?>
+                <tr><th>Catalog {{ $i }}</th><td>{!! $sanpham->$cata ? "<a  class='show-images' href='".asset('/backend/upload/catalogs'). '/'.$sanpham->$cata."' target='_blank'> ". $sanpham->$cata."</a>" : "<span class='not-set'>(not set)</span>"!!} --- {{ $sanpham->$active == '1' ? "Active" : "Non-active" }}</td></tr>
+            <?php
+                }
+            ?>
+
         </tbody>
     </table>
 

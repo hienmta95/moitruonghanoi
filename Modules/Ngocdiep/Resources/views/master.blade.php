@@ -100,7 +100,7 @@
                     <a style="float: left" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
                         <img style="max-width: 75px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
                     </a>
-                    <div class="logo-brand" style="display: inline-block;
+                    <div class="logo-brand {{ $tencongty == 'tencongty' ? "logo-vi" : "logo-en" }}" style="display: inline-block;
     max-width: 234px;
     vertical-align: middle;
     margin-left: 10px;
@@ -207,7 +207,7 @@
             <a style="width: auto; display: inline-block;" href="{{ route('trangchu') }}" title="Môi trường Hà Nội">
                 <img style="width: 80px;" src="{{ asset('/images/entech.png') }}" alt="Môi trường Hà Nội" />
             </a>
-            <div class="logo-brand" style="display: inline-block;
+            <div class="logo-brand {{ $tencongty == 'tencongty' ? "logo-vi-sp" : "logo-en-sp" }}" style="display: inline-block;
     max-width: 198px;
     vertical-align: middle;
     margin-left: 5px;

@@ -48,13 +48,21 @@
 
                                     {!! $sanpham[$noidung] !!}
 
-                                    @if($sanpham['catalogs'] && $sanpham['active_catalogs'] == '1')
                                     <div style="margin-top: 30px;">
-                                        <i style="font-size: 15px;" >
-                                            Catalogs: <a href="{{ asset('/backend/upload/catalogs/') .'/'. $sanpham['catalogs'] }}" target="_blank">{{ $sanpham['catalogs'] }}</a>
-                                        </i>
-                                    </div>
+                                    <?php for($i =1; $i <=10; $i++)  {
+                                        $cata = "catalogs".$i;
+                                        $active = "active".$i;
+                                    ?>
+                                    @if(!empty($sanpham[$cata]) && $sanpham[$active] == '1')
+                                            <div>
+                                            <i style="font-size: 15px;" >
+                                                Catalogs:  <a href="{{ asset('/backend/upload/catalogs/') .'/'. $sanpham[$cata] }}" target="_blank">{{ $sanpham[$cata] }}</a>
+                                            </i>
+                                            </div>
                                     @endif
+                                    <?php } ?>
+                                    </div>
+
                                     <div>
                                         <i style="font-size: 13px; float: right">
                                             {{ date_format(date_create($sanpham['updated_at']),"d-m-Y") }}</i>
