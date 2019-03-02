@@ -19,7 +19,7 @@
             @foreach($loaisanpham as $item)
                 <li>
                     <a class="uk-active uk-accordion-title" href="{{ route('loaisanpham', ['id'=>$item['id'], 'slug'=>$item['slug']]) }}" title="{{ $item[$title] }}">
-                        {{ $item[$title] }}  1
+                        {{ $item[$title] }}
                     </a>
                     <div data-wrapper="true" style="height: auto; position: relative;" aria-expanded="true">
                         <ul class="uk-list uk-accordion-content subcat uk-active">
