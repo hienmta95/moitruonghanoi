@@ -39,11 +39,16 @@ class UserController extends Controller
         $infoUpdate = User::where('id', '1')->update([
             'tel1' => $request->tel1,
             'tel2' => $request->tel2,
+            'tel3' => $request->tel3,
+            'tel4' => $request->tel4,
             'truso' => $request->truso,
+            'truso2' => $request->truso2,
             'tencongty' => $request->tencongty,
             'tencongty_en' => $request->tencongty_en,
             'emailcongty' => $request->emailcongty,
             'emailcongty2' => $request->emailcongty2,
+            'emailcongty3' => $request->emailcongty3,
+            'emailcongty4' => $request->emailcongty4,
             'facebook' => $request->facebook,
             'youtube' => $request->youtube,
         ]);

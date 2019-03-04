@@ -69,6 +69,38 @@ Update thông tin
                 <div class="help-block">@if($errors->has('youtube')) {{ $errors->first('youtube') }} @endif</div>
             </div>
 
+            ------------------------------------------------
+
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['truso2']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Địa chỉ trụ sở cở sở 2<span class="required">*</span></label>
+                <input class="form-control{{ $errors->has('truso2') ? ' has-error' : '' }}" name="truso2" type="text" value="{{ $info->truso2 }}">
+                <div class="help-block">@if($errors->has('truso2')) {{ $errors->first('truso2') }} @endif</div>
+            </div>
+
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['tel3']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Số điện thoại thứ nhất của cơ sở 2<span class="required">*</span></label>
+                <input class="form-control{{ $errors->has('tel3') ? ' has-error' : '' }}" name="tel3" type="text" value="{{ $info->tel3 }}">
+                <div class="help-block">@if($errors->has('tel3')) {{ $errors->first('tel3') }} @endif</div>
+            </div>
+
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['tel4']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Số điện thoại thứ hai của cơ sở 2</label>
+                <input class="form-control{{ $errors->has('tel4') ? ' has-error' : '' }}" name="tel4" type="text" value="{{ $info->tel4 }}">
+                <div class="help-block">@if($errors->has('tel4')) {{ $errors->first('tel4') }} @endif</div>
+            </div>
+
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['emailcongty3']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Email 1 của cơ sở 2<span class="required">*</span></label>
+                <input class="form-control{{ $errors->has('emailcongty3') ? ' has-error' : '' }}" name="emailcongty3" type="text" value="{{ $info->emailcongty3 }}">
+                <div class="help-block">@if($errors->has('emailcongty3')) {{ $errors->first('emailcongty3') }} @endif</div>
+            </div>
+
+            <div class="form-group  @if (count($errors->all())) {{$errors->has(['emailcongty4']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Email thứ 2 của cơ sở 2</label>
+                <input class="form-control{{ $errors->has('emailcongty4') ? ' has-error' : '' }}" name="emailcongty4" type="text" value="{{ $info->emailcongty4 }}">
+                <div class="help-block">@if($errors->has('emailcongty4')) {{ $errors->first('emailcongty4') }} @endif</div>
+            </div>
+
             <br>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Update</button>
