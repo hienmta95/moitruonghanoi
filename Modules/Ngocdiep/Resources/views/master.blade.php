@@ -279,18 +279,16 @@
                                 {{ $info[$tencongty] }}
                             </a>
                         </div>
-                        <p><strong>CƠ SỞ CHÍNH:</strong><br />
+                        <p><strong>{{ __('CƠ SỞ CHÍNH') }}:</strong><br />
                             {{ $info['truso'] }}<br />
                             {{ $info['tel1'] }} | {{ $info['tel2'] }}<br />
                             {{ $info['emailcongty'] }} | {{ $info['emailcongty2'] }}
                         </p>
-                        <br />
-                        <p><strong>CHI NHÁNH:</strong><br />
+                        <p><strong>{{ __('CHI NHÁNH') }}:</strong><br />
                             {{ $info['truso2'] }}<br />
                             {{ $info['tel3'] }} | {{ $info['tel4'] }}<br />
                             {{ $info['emailcongty3'] }} | {{ $info['emailcongty4'] }}
                         </p>
-                        <br />
                         <p><strong>Link:</strong><br />
                             <a style="color: #fff" href="{{ route('trangchu') }}">{{ route('trangchu') }}</a>
                         </p>
