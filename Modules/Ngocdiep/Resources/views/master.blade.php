@@ -18,8 +18,8 @@
     </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" type="image/ico" href="{{ asset("/images/favicon.ico") }}">
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content="CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI" />
+    <meta name="description" content="CÔNG TY CỔ PHẦN CÔNG NGHỆ VÀ MÔI TRƯỜNG HÀ NỘI" />
     <meta name="revisit-after" content="1 days">
     <meta name="rating" content="general">
 
