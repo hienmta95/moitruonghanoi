@@ -1566,6 +1566,13 @@
 		margin: 0 auto 15px auto!important;
 		max-width: 100%!important;
 	}
+
+@media (max-width: 960px) {
+    .detail-content img {
+        height: auto!important;
+    }
+}
+
 	.share-box>*+* {margin-left: 5px;}
 	.share-box .plus {position: relative;margin-top: -4px;}
 
