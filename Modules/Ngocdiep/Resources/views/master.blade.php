@@ -43,7 +43,7 @@
     <link href="{{ asset('ngocdiep/css/reset.css') }}" rel="stylesheet" />
     <link href="{{ asset('ngocdiep/css/library.css') }}" rel="stylesheet" />
     <link href="{{ asset('ngocdiep/css/slideshow.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('ngocdiep/css/style.css') }}?v={{ cxl_app_version() }}" rel="stylesheet" />
+    <link href="{{ asset('ngocdiep/css/style.css') }}?v={{ date_format(now(),"His") }}" rel="stylesheet" />
     <script src="{{ asset('ngocdiep/js/jquery.js') }}"></script>
     <script src="{{ asset('ngocdiep/js/uikit.min.js') }}"></script>
     <script type="text/javascript">
