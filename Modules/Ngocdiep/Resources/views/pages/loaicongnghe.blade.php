@@ -34,6 +34,7 @@
 
         <div class="uk-container uk-container-center">
             <div class="uk-grid uk-grid-medium">
+
                 <div class="uk-width-large-1-4 uk-visible-large">
                     <aside class="aside">
 
@@ -45,6 +46,7 @@
 
                     </aside><!-- .aside -->
                 </div><!-- .uk-width -->
+
                 <div class="uk-width-large-3-4">
 
                     <section class="prdcatalogue">

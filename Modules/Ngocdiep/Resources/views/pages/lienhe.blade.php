@@ -36,6 +36,7 @@
             <section class="uk-panel contact">
                 <section class="panel-body">
                     <div class="uk-grid uk-grid-medium">
+
                         <div class="uk-width-large-1-3 uk-width-xlarge-3-4">
                             <div class="contact-infomation">
                                 <div class="note">{{ __('Cám ơn quý khách đã ghé thăm website chúng tôi..') }}</div>
@@ -47,6 +48,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="uk-width-large-1-3 uk-width-xlarge-1-4">
                             <div class="contact-form">
                                 <div class="label" style="word-break: break-word;
@@ -80,6 +82,7 @@
                                 </form><!-- end .form -->
                             </div><!-- end .contacts -->
                         </div>
+
                     </div>
                 </section>
             </section>

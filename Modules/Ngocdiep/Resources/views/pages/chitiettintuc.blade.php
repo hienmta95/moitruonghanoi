@@ -33,17 +33,19 @@
         </div>
         <div class="uk-container uk-container-center">
             <div class="uk-grid uk-grid-medium">
+
                 <div class="uk-width-large-1-4 uk-visible-large">
                     <aside class="aside">
                         <aside class="aside">
 
-                            @include('ngocdiep::pages.danhmucsanpham')
+                            @include('ngocdiep::pages.danhmuccongnghe')
                             @include('ngocdiep::pages.danhmucmail')
                             @include('ngocdiep::pages.tinnoibat')
 
                         </aside><!-- .aside -->
                     </aside><!-- .aside -->
                 </div>
+
                 <div class="uk-width-large-3-4">
                     <section class="art-detail">
                         <section class="panel-body">
@@ -55,6 +57,27 @@
                                 <div class="content">
                                     {!! $tintucDetail[$noidung] !!}
                                 </div>
+                                <!-- social -->
+                                <div class="socials-share">
+                                    <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ route('tintuc', ['id'=>$tintucDetail['id'], 'slug'=>$tintucDetail['slug']]) }}" target="_blank">
+                                        <span class="fa fa-facebook"></span> Share
+                                    </a>
+                                    <a class="bg-twitter" href="https://twitter.com/share?text=moitruonghanoi&url={{ route('tintuc', ['id'=>$tintucDetail['id'], 'slug'=>$tintucDetail['slug']]) }}" target="_blank">
+                                        <span class="fa fa-twitter"></span> Tweet
+                                    </a>
+                                    <a class="bg-google-plus" href="https://plus.google.com/share?url={{ route('tintuc', ['id'=>$tintucDetail['id'], 'slug'=>$tintucDetail['slug']]) }}" target="_blank">
+                                        <span class="fa fa-google-plus"></span> Plus
+                                    </a>
+                                    <a class="bg-pinterest" href="https://www.pinterest.com/pin/create/button/?url={{ route('tintuc', ['id'=>$tintucDetail['id'], 'slug'=>$tintucDetail['slug']]) }}&media={{ asset('/').$tintucDetail['image']['url'] }}&description={{ $tintucDetail['title'] }}" target="_blank">
+                                        <span class="fa fa-pinterest"></span> Pin
+                                    </a>
+
+                                    <a class="bg-email" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to{{ $info['emailcongty'] }}&su={{ $tintucDetail['title'] }}&body={{ $tintucDetail['slug'] }}" target="_blank">
+                                        <span class="fa fa-envelope"></span> Gmail
+                                    </a>
+                                </div>
+                                <!-- end -->
+
                             </article>
                         </section>
                     </section><!-- .article-detail -->
@@ -99,11 +122,12 @@
                         </section>
                     </section><!-- .article-related -->
                 </div>
+
                 <div class="uk-width-large-1-4 uk-visible-small">
                     <aside class="aside">
                         <aside class="aside">
 
-                            @include('ngocdiep::pages.danhmucsanpham')
+                            @include('ngocdiep::pages.danhmuccongnghe')
                             @include('ngocdiep::pages.danhmucmail')
                             @include('ngocdiep::pages.tinnoibat')
 

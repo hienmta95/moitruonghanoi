@@ -36,6 +36,19 @@
         </div>
         <div class="uk-container uk-container-center">
             <div class="uk-grid uk-grid-medium">
+
+                <div class="uk-width-large-1-4 uk-visible-large">
+                    <aside class="aside">
+
+                        @include('ngocdiep::pages.danhmucsanpham')
+
+                        @include('ngocdiep::pages.danhmucmail')
+
+                        @include('ngocdiep::pages.tinnoibat')
+
+                    </aside><!-- .aside -->
+                </div><!-- .uk-width -->
+
                 <div class="uk-width-large-3-4">
                     <section class="prd-detail">
                         <section class="panel-body">
@@ -67,6 +80,28 @@
                                         <i style="font-size: 13px; float: right">
                                             {{ date_format(date_create($sanpham['updated_at']),"d-m-Y") }}</i>
                                     </div>
+
+                                    <!-- social -->
+                                    <div class="socials-share">
+                                        <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ route('sanpham', ['id'=>$sanpham['id'], 'slug'=>$sanpham['slug']]) }}" target="_blank">
+                                            <span class="fa fa-facebook"></span> Share
+                                        </a>
+                                        <a class="bg-twitter" href="https://twitter.com/share?text=moitruonghanoi&url={{ route('sanpham', ['id'=>$sanpham['id'], 'slug'=>$sanpham['slug']]) }}" target="_blank">
+                                            <span class="fa fa-twitter"></span> Tweet
+                                        </a>
+                                        <a class="bg-google-plus" href="https://plus.google.com/share?url={{ route('sanpham', ['id'=>$sanpham['id'], 'slug'=>$sanpham['slug']]) }}" target="_blank">
+                                            <span class="fa fa-google-plus"></span> Plus
+                                        </a>
+                                        <a class="bg-pinterest" href="https://www.pinterest.com/pin/create/button/?url={{ route('sanpham', ['id'=>$sanpham['id'], 'slug'=>$sanpham['slug']]) }}&media={{ asset('/').$sanpham['image']['url'] }}&description={{ $sanpham['title'] }}" target="_blank">
+                                            <span class="fa fa-pinterest"></span> Pin
+                                        </a>
+
+                                        <a class="bg-email" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to{{ $info['emailcongty'] }}&su={{ $sanpham['title'] }}&body={{ $sanpham['slug'] }}" target="_blank">
+                                            <span class="fa fa-envelope"></span> Gmail
+                                        </a>
+                                    </div>
+                                    <!-- end -->
+
                                 </div>
                             </div>
                         </section>
@@ -109,17 +144,7 @@
                         </section>
                     </section><!-- .prd-same -->
                 </div>
-                <div class="uk-width-large-1-4 uk-visible-large">
-                    <aside class="aside">
 
-                        @include('ngocdiep::pages.danhmucsanpham')
-
-                        @include('ngocdiep::pages.danhmucmail')
-
-                        @include('ngocdiep::pages.tinnoibat')
-
-                    </aside><!-- .aside -->
-                </div><!-- .uk-width -->
                 <div class="uk-width-large-1-4 uk-visible-small">
                     <aside class="aside">
 

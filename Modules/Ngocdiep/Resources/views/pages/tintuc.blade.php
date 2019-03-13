@@ -31,10 +31,11 @@
         </div>
         <div class="uk-container uk-container-center">
             <div class="uk-grid uk-grid-medium">
+
                 <div class="uk-width-large-1-4 uk-visible-large">
                     <aside class="aside">
 
-                        @include('ngocdiep::pages.danhmucsanpham')
+                        @include('ngocdiep::pages.danhmuccongnghe')
 
                         @include('ngocdiep::pages.danhmucmail')
 
@@ -42,6 +43,7 @@
 
                     </aside><!-- .aside -->
                 </div>
+
                 <div class="uk-width-large-3-4">
                     <section class="artcatalogue">
                         <header class="panel-head">
@@ -70,6 +72,7 @@
                                             <div class="date-time" style="text-align: right">
                                                 <i>{{ date_format(date_create($item['updated_at']),"d-m-Y") }}</i>
                                             </div>
+
                                         </div>
                                     </article>
                                 </li>
@@ -86,7 +89,7 @@
                 <div class="uk-width-large-1-4 uk-visible-small">
                     <aside class="aside">
 
-                        @include('ngocdiep::pages.danhmucsanpham')
+                        @include('ngocdiep::pages.danhmuccongnghe')
 
                         @include('ngocdiep::pages.danhmucmail')
 

@@ -2235,3 +2235,75 @@
     max-width: 140px !important;
     min-width: 140px !important;
 }
+
+
+.socials-share {
+    margin-bottom: 0px;
+    clear: both;
+    text-align: right;
+}
+
+.socials-share a {
+    padding: 0px 10px;
+    color: #fff;
+    line-height: 23px;
+    border-radius: 2px;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+
+.socials-share span.fa {
+    margin-right: 3px;
+}
+
+.bg-facebook {
+    background: #3a5899;
+}
+
+.bg-facebook:hover, .bg-facebook:focus {
+    background: #1d418d;
+}
+
+.bg-twitter {
+    background: #00acee;
+}
+
+.bg-twitter:hover, .bg-twitter:focus {
+    background: #0b93c7;
+}
+
+.bg-google-plus {
+    background: #db4437;
+}
+
+.bg-google-plus:hover, .bg-google-plus:focus {
+    background: #bb2a1d;
+}
+
+.bg-pinterest {
+    background: #cb1e26;
+}
+
+.bg-pinterest:hover, .bg-pinterest:focus {
+    background: #ae0e15;
+}
+
+.bg-email {
+    background: #dd5348;
+}
+
+.bg-email:hover, .bg-email:focus {
+    background: #ce3f34;
+}
+
+.logo-wrap img {
+    max-height: 90px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.logo-wrap {
+    min-width: 300px;
+}

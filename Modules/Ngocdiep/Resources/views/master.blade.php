@@ -52,6 +52,8 @@
     <link rel="stylesheet" href="{{ asset('ngocdiep/css/home-buy.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('ngocdiep/css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('ngocdiep/css/fotorama.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('ngocdiep/css/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('ngocdiep/css/slick-theme.css') }}"/>
     <script type="text/javascript" src="{{ asset('ngocdiep/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('ngocdiep/js/fotorama.js') }}"></script>
     <script src="{{ asset('/ngocdiep/js/platform.js') }}" async defer>{lang: 'vi'}</script>
@@ -241,31 +243,25 @@
 
 
 <section class="homepage-category logo-scroll" style="margin-bottom: 0px;">
-    <div class="uk-container uk-container-center">
-        <div class="uk-slidenav-position slider" data-uk-slider="{autoplay: true, autoplayInterval: 5500}">
-            <div class="uk-slider-container">
-                <ul class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">
 
-                    @foreach($section as $key=>$items)
-                        @if($key == 4)
-                            $@foreach($items as $key2=>$item)
-                                <li>
-                                    <a class="box" href="{{ $item['link'] }}"
-                                       title="{{ $item[$title] }}" target="_blank">
-                                        <span class="icon">
-                                            <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
-                                        </span>
-                                    </a>
-                                </li>
-                            @endforeach
-                        @endif
-                    @endforeach
+    <section class="slider" id="logo-slider">
+        @foreach($section as $key=>$items)
+            @if($key == 4)
+                @foreach($items as $key2=>$item)
+                    <div class="logo-wrap">
+                        <a class="box" href="{{ $item['link'] }}"
+                           title="{{ $item[$title] }}" target="_blank">
+                                <span class="icon">
+                                    <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
+                                </span>
+                        </a>
+                    </div>
+                @endforeach
+            @endif
+        @endforeach
 
-                </ul>
-            </div>
-        </div>
-        <!-- .slider -->
-    </div>
+    </section>
+
 </section><!-- .homepage-category -->
 
 <footer class="footer" style="color: #fff">
@@ -405,6 +401,8 @@
 <script src="{{ asset('ngocdiep/js/accordion.min.js') }}"></script>
 <script src="{{ asset('ngocdiep/js/function.js') }}"></script>
 <script src="{{ asset('ngocdiep/js/library1.js') }}"></script>
+<script src="{{ asset('ngocdiep/js/slick.js') }}"></script>
+<script src="{{ asset('ngocdiep/js/modernizr.min.js') }}"></script>
 <script src="{{ asset('backend/dist/js/js/jquery.cookie.js') }}"></script>
 
 <div id="modal-cart" class="uk-modal">
@@ -436,6 +434,20 @@
             var langText = $(this).attr('title');
             $.cookie("temp-lang", langText, { expires : 1, path:'/' });
             location.reload();
+        });
+
+        $('#logo-slider').slick({
+
+            speed: 3000,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            // slidesToScroll: 1,
+            variableWidth: true,
+            centerMode: true,
+            infinite: true,
+
         });
 
     })(jQuery);

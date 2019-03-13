@@ -121,6 +121,7 @@ class FrontendController extends Controller
         $congnghe = Congnghe::with(['image', 'loaicongnghe'])
             ->where('id', $request->id)
             ->first()->toArray();
+
         $congnghelienquan = Congnghe::with(['image'])
             ->where('id', '!=', $congnghe['id'])
             ->where('loaicongnghe_id', $congnghe['loaicongnghe']['id'])

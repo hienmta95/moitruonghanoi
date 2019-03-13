@@ -65,6 +65,29 @@
                                         <i style="font-size: 13px; float: right">
                                             {{ date_format(date_create($duan['updated_at']),"d-m-Y") }}</i>
                                     </div>
+
+                                    <!-- social -->
+                                    <div class="socials-share">
+                                        <a class="bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ route('duan', ['id'=>$duan['id'], 'slug'=>$duan['slug']]) }}" target="_blank">
+                                            <span class="fa fa-facebook"></span> Share
+                                        </a>
+                                        <a class="bg-twitter" href="https://twitter.com/share?text=moitruonghanoi&url={{ route('duan', ['id'=>$duan['id'], 'slug'=>$duan['slug']]) }}" target="_blank">
+                                            <span class="fa fa-twitter"></span> Tweet
+                                        </a>
+                                        <a class="bg-google-plus" href="https://plus.google.com/share?url={{ route('duan', ['id'=>$duan['id'], 'slug'=>$duan['slug']]) }}" target="_blank">
+                                            <span class="fa fa-google-plus"></span> Plus
+                                        </a>
+                                        <a class="bg-pinterest" href="https://www.pinterest.com/pin/create/button/?url={{ route('duan', ['id'=>$duan['id'], 'slug'=>$duan['slug']]) }}&media={{ asset('/').$duan['image']['url'] }}&description={{ $duan['title'] }}" target="_blank">
+                                            <span class="fa fa-pinterest"></span> Pin
+                                        </a>
+
+                                        <a class="bg-email" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to{{ $info['emailcongty'] }}&su={{ $duan['title'] }}&body={{ $duan['slug'] }}" target="_blank">
+                                            <span class="fa fa-envelope"></span> Gmail
+                                        </a>
+                                    </div>
+                                    <!-- end -->
+
+
                                 </div>
                             </div>
                         </section>
