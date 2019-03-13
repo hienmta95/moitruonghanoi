@@ -447,6 +447,7 @@
             variableWidth: true,
             centerMode: true,
             infinite: true,
+            pauseOnHover:false
 
         });
 
