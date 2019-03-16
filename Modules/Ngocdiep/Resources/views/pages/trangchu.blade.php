@@ -7,40 +7,71 @@
 @endsection
 
 @section('styles')
-
+    <style>
+        #logo-slider-first .logo-wrap img {
+            float: left;
+        }
+    </style>
 @endsection
 
 @section('content')
 
     <div id="homepage" class="page-body">
-        <section class="homepage-category">
-            <div class="uk-container uk-container-center">
-                <div class="uk-slidenav-position slider" data-uk-slider="{autoplay: true, autoplayInterval: 10500}">
-                    <div class="uk-slider-container">
-                        <ul class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">
 
-                            @foreach($section as $key=>$items)
-                                @if($key == 1)
-                                    @foreach($items as $key2=>$item)
-                                        <li>
-                                            <a class="box" href="{{ $item['link'] }}"
-                                               title="{{ $item[$title] }}" target="_blank">
-                                        <span class="icon">
-                                            <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
-                                        </span>
-                                                <span class="label" style="color: #000 !important;">{{ $item[$title] }}</span>
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-                            @endforeach
 
-                        </ul>
-                    </div>
-                </div>
-                <!-- .slider -->
-            </div>
+
+        <section class="homepage-category logo-scroll" style="margin-bottom: 0px;">
+
+            <section class="slider" id="logo-slider-first">
+                @foreach($section as $key=>$items)
+                    @if($key == 1)
+                        @foreach($items as $key2=>$item)
+                            <div class="logo-wrap">
+                                <a class="box" href="{{ $item['link'] }}"
+                                   title="{{ $item[$title] }}" target="_blank">
+                                <span class="icon">
+                                    <img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>
+                                </span>
+                                <span class="label" style="color: #000 !important;">{{ $item[$title] }}</span>
+                                </a>
+                            </div>
+                        @endforeach
+                    @endif
+                @endforeach
+
+            </section>
+
         </section><!-- .homepage-category -->
+
+
+        {{--<section class="homepage-category">--}}
+            {{--<div class="uk-container uk-container-center">--}}
+                {{--<div class="uk-slidenav-position slider" data-uk-slider="{autoplay: true, autoplayInterval: 10500}">--}}
+                    {{--<div class="uk-slider-container">--}}
+                        {{--<ul class="uk-slider uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 list">--}}
+
+                            {{--@foreach($section as $key=>$items)--}}
+                                {{--@if($key == 1)--}}
+                                    {{--@foreach($items as $key2=>$item)--}}
+                                        {{--<li>--}}
+                                            {{--<a class="box" href="{{ $item['link'] }}"--}}
+                                               {{--title="{{ $item[$title] }}" target="_blank">--}}
+                                        {{--<span class="icon">--}}
+                                            {{--<img src="{{ $item['image'] }}" alt="{{ $item[$title] }}"/>--}}
+                                        {{--</span>--}}
+                                                {{--<span class="label" style="color: #000 !important;">{{ $item[$title] }}</span>--}}
+                                            {{--</a>--}}
+                                        {{--</li>--}}
+                                    {{--@endforeach--}}
+                                {{--@endif--}}
+                            {{--@endforeach--}}
+
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- .slider -->--}}
+            {{--</div>--}}
+        {{--</section><!-- .homepage-category -->--}}
 
         <div class="uk-container uk-container-center">
             <section class="packaging-category">
@@ -221,10 +252,23 @@
 
 @endsection
 
-@section('scripts')
+@push('scripts')
     <script>
         (function ( $ ) {
+            $('#logo-slider-first').slick({
 
+                speed: 3000,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                cssEase: 'linear',
+                slidesToShow: 1,
+                // slidesToScroll: 1,
+                variableWidth: true,
+                centerMode: true,
+                infinite: true,
+                pauseOnHover:false
+
+            });
         })(jQuery);
     </script>
-@endsection
+@endpush

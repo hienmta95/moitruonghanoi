@@ -2157,11 +2157,10 @@
 
 .logo-scroll.homepage-category .box {
     text-align: center;
-    padding-left: 0px;
 }
 
 .logo-scroll.homepage-category .icon {
-    left: auto;
+    /*left: auto;*/
     width: 100%;
 }
 
@@ -2305,5 +2304,6 @@
 }
 
 .logo-wrap {
+    padding-left: 15px;
     min-width: 300px;
 }
