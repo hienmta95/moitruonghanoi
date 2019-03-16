@@ -10,6 +10,7 @@
     <style>
         #logo-slider-first .logo-wrap img {
             float: left;
+            max-width: 100px;
         }
     </style>
 @endsection
