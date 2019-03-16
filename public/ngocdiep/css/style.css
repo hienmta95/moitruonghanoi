@@ -2160,7 +2160,7 @@
 }
 
 .logo-scroll.homepage-category .icon {
-    /*left: auto;*/
+    left: 0;
     width: 100%;
 }
 
