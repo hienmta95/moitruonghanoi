@@ -263,11 +263,14 @@
                 autoplaySpeed: 3000,
                 cssEase: 'linear',
                 slidesToShow: 1,
-                // slidesToScroll: 1,
                 variableWidth: true,
                 centerMode: true,
                 infinite: true,
-                pauseOnHover:false
+                pauseOnHover:false,
+                accesibility: false,
+                draggable: false,
+                swipe: false,
+                touchMove: false
 
             });
         })(jQuery);

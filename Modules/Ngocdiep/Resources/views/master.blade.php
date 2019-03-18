@@ -116,10 +116,10 @@
                 </div>
                 <nav class="main-navs">
                     <ul class="uk-navbar-nav main-menus">
-                        <li>
-                            <a href="{{ route('trangchu') }}" title="Trang chủ">
-                                {{ __('Trang chủ') }}</a>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="{{ route('trangchu') }}" title="Trang chủ">--}}
+                                {{--{{ __('Trang chủ') }}</a>--}}
+                        {{--</li>--}}
                         <li>
                             <a href="{{ route('gioithieu') }}" title="Giới Thiệu">
                                 {{ __('Giới thiệu') }}</a>
@@ -149,7 +149,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#" title="Các dự án">{{ __('Các dự án') }}</a>
+                            <a href="#" title="Các dự án">{{ __('Dự án') }}</a>
                             <div class="dropdown-menu">
                                 <ul class="uk-list sub_menus">
                                     @foreach($loaiduan as $item)
@@ -340,9 +340,9 @@
         </form>
 
         <ul class="l1 uk-nav uk-nav-offcanvas uk-nav uk-nav-parent-icon" data-uk-nav>
-            <li class="l1 ">
-                <a href="{{ route('trangchu') }}" title="Trang chủ" class="l1">{{ __('Trang chủ') }}</a>
-            </li>
+            {{--<li class="l1 ">--}}
+                {{--<a href="{{ route('trangchu') }}" title="Trang chủ" class="l1">{{ __('Trang chủ') }}</a>--}}
+            {{--</li>--}}
             <li class="l1 ">
                 <a href="{{ route('gioithieu') }}" title="Giới Thiệu" class="l1">{{ __('Giới thiệu') }}</a>
             </li>
@@ -370,7 +370,7 @@
             </li>
             <li class="l1 uk-parent uk-position-relative">
                 <a href="#" title="" class="dropicon"></a>
-                <a href="#" title="Các dự án" class="l1">{{ __('Các dự án') }}</a>
+                <a href="#" title="Các dự án" class="l1">{{ __('Dự án') }}</a>
                 <ul class="l2 uk-nav-sub">
                     @foreach($loaiduan as $item)
                         <li class="l2">
@@ -443,11 +443,14 @@
             autoplaySpeed: 3000,
             cssEase: 'linear',
             slidesToShow: 1,
-            // slidesToScroll: 1,
             variableWidth: true,
             centerMode: true,
             infinite: true,
-            pauseOnHover:false
+            pauseOnHover:false,
+            accesibility: false,
+            draggable: false,
+            swipe: false,
+            touchMove: false
 
         });
 

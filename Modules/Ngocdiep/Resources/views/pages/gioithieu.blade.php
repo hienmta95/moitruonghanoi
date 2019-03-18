@@ -37,7 +37,7 @@
                     <aside class="aside">
                         <aside class="aside">
 
-                            @include('ngocdiep::pages.danhmucsanpham')
+                            @include('ngocdiep::pages.danhmucbaiviet')
                             @include('ngocdiep::pages.danhmucmail')
                             @include('ngocdiep::pages.tinnoibat')
 

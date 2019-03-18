@@ -2308,3 +2308,7 @@
     padding-left: 15px;
     min-width: 300px;
 }
+
+.main-navs .main-menus > li > a:hover {
+    cursor: pointer;
+}
