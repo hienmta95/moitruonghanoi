@@ -116,10 +116,10 @@
                 </div>
                 <nav class="main-navs">
                     <ul class="uk-navbar-nav main-menus">
-                        {{--<li>--}}
-                            {{--<a href="{{ route('trangchu') }}" title="Trang chủ">--}}
-                                {{--{{ __('Trang chủ') }}</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="{{ route('trangchu') }}" title="Trang chủ">
+                                {{ __('Trang chủ') }}</a>
+                        </li>
                         <li>
                             <a href="{{ route('gioithieu') }}" title="Giới Thiệu">
                                 {{ __('Giới thiệu') }}</a>
@@ -340,9 +340,9 @@
         </form>
 
         <ul class="l1 uk-nav uk-nav-offcanvas uk-nav uk-nav-parent-icon" data-uk-nav>
-            {{--<li class="l1 ">--}}
-                {{--<a href="{{ route('trangchu') }}" title="Trang chủ" class="l1">{{ __('Trang chủ') }}</a>--}}
-            {{--</li>--}}
+            <li class="l1 ">
+                <a href="{{ route('trangchu') }}" title="Trang chủ" class="l1">{{ __('Trang chủ') }}</a>
+            </li>
             <li class="l1 ">
                 <a href="{{ route('gioithieu') }}" title="Giới Thiệu" class="l1">{{ __('Giới thiệu') }}</a>
             </li>
