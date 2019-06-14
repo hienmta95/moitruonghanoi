@@ -101,6 +101,46 @@ Update thông tin
                 <div class="help-block">@if($errors->has('emailcongty4')) {{ $errors->first('emailcongty4') }} @endif</div>
             </div>
 
+            <p>---------------------------------------</p>
+
+            <div class="form-group @if (count($errors->all())) {{$errors->has(['tuyendung']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Tuyển dụng</label>
+                <textarea id="tuyendung" class="form-control{{ $errors->has('tuyendung') ? ' has-error' : '' }}" name="tuyendung" rows="3">{{ $info->tuyendung }}</textarea>
+
+                <script type="text/javascript">
+                    var editor = CKEDITOR.replace('tuyendung',{
+                        language:'vi',
+                        filebrowserBrowseUrl :'/js/ckfinder/ckfinder.html',
+                        filebrowserImageBrowseUrl : '/js/ckfinder/ckfinder.html?type=Images',
+                        filebrowserFlashBrowseUrl : '/js/ckfinder/ckfinder.html?type=Flash',
+                        filebrowserUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                        filebrowserImageUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                        filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                    });
+                </script>
+
+                <div class="help-block">@if($errors->has('tuyendung')) {{ $errors->first('tuyendung') }} @endif</div>
+            </div>
+
+            <div class="form-group @if (count($errors->all())) {{$errors->has(['tuyendung_en']) ? 'has-error' : 'has-success'}} @endif">
+                <label class="control-label">Tuyển dụng _ English</label>
+                <textarea id="tuyendung_en" class="form-control{{ $errors->has('tuyendung_en') ? ' has-error' : '' }}" name="tuyendung_en" rows="3">{{ $info->tuyendung_en }}</textarea>
+
+                <script type="text/javascript">
+                    var editor = CKEDITOR.replace('tuyendung_en',{
+                        language:'vi',
+                        filebrowserBrowseUrl :'/js/ckfinder/ckfinder.html',
+                        filebrowserImageBrowseUrl : '/js/ckfinder/ckfinder.html?type=Images',
+                        filebrowserFlashBrowseUrl : '/js/ckfinder/ckfinder.html?type=Flash',
+                        filebrowserUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                        filebrowserImageUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                        filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+                    });
+                </script>
+
+                <div class="help-block">@if($errors->has('tuyendung_en')) {{ $errors->first('tuyendung_en') }} @endif</div>
+            </div>
+
             <br>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Update</button>

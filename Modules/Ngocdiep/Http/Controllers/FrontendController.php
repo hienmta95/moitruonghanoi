@@ -32,12 +32,14 @@ class FrontendController extends Controller
             $noidung = 'noidung_en';
             $description = 'description_en';
             $gioithieu = 'gioithieu_en';
+            $tuyendung = 'tuyendung_en';
             $tencongty = 'tencongty_en';
         } elseif ($this->lang == 'vi') {
             $title = 'title';
             $noidung = 'noidung';
             $description = 'description';
             $gioithieu = 'gioithieu';
+            $tuyendung = 'tuyendung';
             $tencongty = 'tencongty';
         }
 
@@ -77,6 +79,7 @@ class FrontendController extends Controller
         view()->share('noidung', $noidung);
         view()->share('description', $description);
         view()->share('gioithieu', $gioithieu);
+        view()->share('tuyendung', $tuyendung);
         view()->share('info', $info);
         view()->share('section', $section);
         view()->share('tencongty', $tencongty);
@@ -268,6 +271,12 @@ class FrontendController extends Controller
             ->get()->toArray();
 
         return view('ngocdiep::pages.catalogs', compact('data_log'));
+    }
+
+    public function getTuyendung(Request $request)
+    {
+        $data = User::where('id', '1')->first()->toArray();
+        return view('ngocdiep::pages.tuyendung', compact('data'));
     }
 
 }

@@ -86,6 +86,12 @@
                             <span class="label" style="font-size: 100%">Catalogs</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('tuyendung') }}" title="{{ __('Tuyển dụng') }}">
+                            <fa class="fa fa-user" style="color: #8fecc0"></fa>
+                            <span class="label" style="font-size: 100%;">{{ __('Tuyển dụng') }}</span>
+                        </a>
+                    </li>
                 </ul>
                 <div class="uk-clearfix pc-language lang-change">
                     <a class="btn en" href="#" title="en">English</a>
@@ -382,6 +388,7 @@
             <li class="l1 ">
                 <a href="{{ route('tintuc.list') }}" title="Tin tức" class="l1">{{ __('Tin tức') }}</a>
             </li>
+
             {{--<li class="l1 ">--}}
                 {{--<a href="tuyen-dung" title="Tuyển dụng" class="l1">Tuyển dụng</a>--}}
             {{--</li>--}}
@@ -474,6 +481,10 @@
             lastScrollTop = st;
         });
     });
+</script>
+
+<script type="text/javascript">
+    var  message="";function clickIE() {if (document.all) {(message);return   false;}}function clickNS(e) {if   (document.layers||(document.getElementById&&!document.all)) {if   (e.which==2||e.which==3) {(message);return false;}}}if  (document.layers)   {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;document.onselectstart=clickIE}document.oncontextmenu=new   Function("return false")
 </script>
 
 <style type="text/css" media="screen and (max-width:767px)">

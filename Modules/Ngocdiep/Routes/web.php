@@ -15,6 +15,7 @@ Route::group(['middleware' => ['web'], 'prefix' => ''], function()
     Route::get('/tin-tuc', 'FrontendController@getTintuc')->name('tintuc.list');
     Route::get('/tin-tuc/{id}/{slug}', 'FrontendController@getTintucdetail')->name('tintuc');
     Route::get('/gioi-thieu', 'FrontendController@getGioithieu')->name('gioithieu');
+    Route::get('/tuyen-dung', 'FrontendController@getTuyendung')->name('tuyendung');
     Route::get('/sitemap', 'FrontendController@getSitemap')->name('sitemap');
     Route::get('/catalogs', 'FrontendController@getCatalogs')->name('catalogs');
 

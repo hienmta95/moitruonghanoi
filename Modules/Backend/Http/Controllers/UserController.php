@@ -51,6 +51,8 @@ class UserController extends Controller
             'emailcongty4' => $request->emailcongty4,
             'facebook' => $request->facebook,
             'youtube' => $request->youtube,
+            'tuyendung' => $request->tuyendung,
+            'tuyendung_en' => $request->tuyendung_en
         ]);
         $info = User::where('id', '1')->first();
         return view('backend::thongtin.update', compact('info'));

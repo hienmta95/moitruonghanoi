@@ -19,7 +19,7 @@ class User extends Authenticatable
         'username', 'email', 'password', 'id', 'phone', 'created_at', 'updated_at',
         'tencongty', 'emailcongty', 'tel1', 'tel2', 'truso', 'facebook', 'youtube',
         'gioithieu', 'count', 'gioithieu_en', 'emailcongty2', 'tencongty_en',
-        'truso2', 'tel3', 'tel4', 'emailcongty3', 'emailcongty4'
+        'truso2', 'tel3', 'tel4', 'emailcongty3', 'emailcongty4', 'tuyendung', 'tuyendung_en'
     ];
 
     /**
